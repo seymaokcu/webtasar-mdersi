@@ -1,0 +1,329 @@
+/* 1. Global Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    /* Renk Paleti: Daha sıcak, kahve tonları */
+    --primary-color: #3E3232; /* Koyu Kahve (Arka plan) */
+    --secondary-color: #A87C7C; /* Kızıl Kahve (Vurgu) */
+    --accent-color: #d4b3b3; /* Açık Kahve (Metin/Link) */
+    --light-bg: #EAEAEA; /* Ürün kartı/Açık arka plan */
+    --dark-text: #222222;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Sayfa içi link atlamalarını yumuşak yapar */
+}
+
+/* 2. Ana Düzen */
+.main-content {
+    background-color: var(--primary-color);
+    padding: 0 10%;
+}
+
+/* 3. Header ve Navigasyon */
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+nav {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    color: var(--accent-color);
+    font-size: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--secondary-color);
+    color: var(--dark-text);
+}
+
+/* 4. Hero/Home Bölümü */
+.content {
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 0;
+}
+
+.hero-left {
+    max-width: 50%;
+}
+
+.hero-left h1 {
+    font-size: 65px;
+    font-weight: 700;
+    color: var(--text-on-dark);
+}
+
+.hero-left h1 span {
+    color: var(--secondary-color);
+}
+
+.hero-left p {
+    margin: 20px 0 40px;
+    font-size: 18px;
+    color: var(--accent-color);
+}
+
+.hero-right img {
+    width: 350px;
+    animation: move 4s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+    0% {transform: translateY(-20px);}
+    100% {transform: translateY(20px);}
+}
+
+.btn {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    padding: 12px 45px;
+    border-radius: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: .5s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+
+/* 5. ÜRÜNLER BÖLÜMÜ */
+.products-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.products-section h2 {
+    font-size: 48px;
+    margin-bottom: 50px;
+    color: var(--text-on-dark);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Esnek kart düzeni */
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Hafif yukarı kayma efekti */
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: var(--dark-text);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.product-card .price {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-block;
+    transition: .3s;
+    font-weight: bold;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+/* 6. İLETİŞİM BÖLÜMÜ */
+.contact-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 48px;
+    margin-bottom: 50px;
+    color: var(--text-on-dark);
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    background-color: #4A3C3C;
+    color: var(--accent-color);
+    font-size: 16px;
+}
+
+.contact-info {
+    width: 45%;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.contact-info h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+/* 7. Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    color: var(--secondary-color);
+    background-color: #332A2A;
+}
+
+/* 8. Duyarlılık (Responsive) */
+@media (max-width: 992px) {
+    .main-content {
+        padding: 0 5%;
+    }
+    
+    .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 0 50px;
+    }
+
+    .hero-left {
+        max-width: 100%;
+    }
+
+    .hero-right {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .hero-right img {
+        width: 300px;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form,
+    .contact-info {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    nav ul {
+        /* Basit mobil navigasyon çözümü */
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+        flex-direction: column;
+        display: none; /* JavaScript ile görünür yapılmalıdır */
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        border-radius: 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Psuedo-class Örneği</title>
+        <style>
+            /*link durumları*/
+            a:link{
+                color: blue;  /*ziyaret edilmemiş link*/
+                text-decoration: none;
+            }
+            a:visited{
+                color: purple; /*ziyaret edilmiş link*/
+            }
+            a:hover{
+                color: red;  /*üzerine gelince*/
+                text-decoration: underline;
+            }
+            a:active{
+                color: green; /*tıklanınca*/
+            }
+
+            /*ilk paragrafın özel rengi*/
+            p:first-child{
+                color: darkorange;
+                font-weight: bold;
+            }
+
+            /*paragraf içindeki ilk <i> etiketi*/
+            p > i:first-child{
+                color: blue;
+            }
+
+            /*dil bazlı stiller*/
+            q:lang(en) {
+                quotes: "“" "”";
+                color: darkgreen;
+            }
+            q:lang(tr){
+                quotes: "«" "»";
+                color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Pseudo-class Uygulaması</h2>
+
+        <p><i>Merhaba</i> dünya. Bu paragraf ilk olduğu için turuncu renkte</p>
+        <p><i>Ben</i> İkinci paragrafım</p>
+
+        <p>Bir <a href="https://www.w3schools.com">link</a> örneği burda</p>
+
+        <p>Alıntı örnekleri:</p>
+        <p><q lang="en">This is an English quote</q></p>
+        <p><q lang="tr">Bu bir Türkçe alıntıdır.</q></p>
+    </body>
+</html>

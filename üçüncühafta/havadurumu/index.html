@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kapsamlı Hava Durumu Uygulaması</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="container"></div>
+
+        <div class="weather-app">
+            <h1 class="app-title">Hava Durumu Bilgisi</h1>
+            <form id="form">
+                <label for="search">Lokasyon Bilgisi:</label>
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Şehir Adı (ör: İstanbul, London)"
+                    autocomplete="off"
+                />
+            </form>
+
+            <main id="main">
+                </main>
+
+            <div id="forecast-container">
+                <h2>5 Günlük Tahmin</h2>
+                <div id="forecast">
+                    </div>
+            </div>
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>

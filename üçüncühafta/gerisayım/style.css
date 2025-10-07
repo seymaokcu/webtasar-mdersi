@@ -1,0 +1,90 @@
+body {
+    background: #282e3a;
+    font-family: tahoma;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-top: 50px; /* Başlık ve sayaç arasına boşluk */
+}
+h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 10px;
+    margin-top: 50px; /* Alttaki başlık için boşluk */
+}
+
+#main {
+    width: 850px;
+    margin: 2% auto;
+}
+
+#clock span {
+    float: left;
+    text-align: center;
+    font-size: 60px;
+    margin: 0 2.5%;
+    color: #fff;
+    padding: 20px;
+    width: 20%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    /* Animasyon için başlangıç ayarı */
+    transform-origin: center center; 
+}
+
+#clock span:nth-child(1) {
+    background: #fa5559; /* Kırmızımsı */
+}
+
+#clock span:nth-child(2) {
+    background: #26c2b9; /* Turkuaz */
+}
+
+#clock span:nth-child(3) {
+    background: #f6bc58; /* Sarımsı */
+}
+
+#clock span:nth-child(4) {
+    background: #2dcb74; /* Yeşil */
+}
+
+#clock::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#display span {
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    color: #ddd;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px rgba(10, 10, 10, 0.7);
+}
+
+span.flip {
+    animation: flip 0.7s ease-out forwards; /* Animasyon süresini 0.7s yaptık */
+}
+
+/* 3D çevirme efekti eklendi */
+@keyframes flip {
+    0% {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: perspective(400px) rotateX(360deg);
+        opacity: 1;
+    }
+}

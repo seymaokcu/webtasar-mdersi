@@ -1,0 +1,77 @@
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    cursor: none; /* Varsayılan fare imlecini gizle */
+    background-color: #222;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    font-size: 2em;
+}
+
+/* Türk Bayrağı İmleci */
+.turkish-flag-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%); /* Ortadan konumlandırmak için */
+    width: 80px; /* Bayrağın genişliği (Oran: 1.5) */
+    height: 53px; /* Bayrağın yüksekliği (Oran: 1) - 80/1.5 = ~53.33 */
+    background-color: #E30A17; /* Kırmızı zemin */
+    border-radius: 3px;
+    pointer-events: none;
+    overflow: hidden; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    display: flex; 
+    align-items: center;
+}
+
+/* Ay (Hilal) */
+.moon {
+    position: relative;
+    /* Ayın konumu ve boyutu bayrak standardına daha uygun ayarlandı */
+    width: 25px; 
+    height: 25px; 
+    border-radius: 50%;
+    background-color: white; 
+    left: 20px; /* Bayrak solundan konumu */
+    
+    /* İkinci daire ile hilal şekli oluşturuluyor */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 5px; /* Hilal inceliği */
+        width: 25px; 
+        height: 25px; 
+        border-radius: 50%;
+        background-color: #E30A17; /* Zemin rengi ile aynı renk */
+    }
+}
+
+/* YILDIZ İYİLEŞTİRİLDİ */
+.star {
+    position: absolute;
+    width: 10px; /* Yıldızın genişliği */
+    height: 10px; /* Yıldızın yüksekliği */
+    background-color: transparent;
+    
+    /* Yıldızın konumunu hilalin sağına taşıdık */
+    left: 45px; 
+    top: 50%;
+    transform: translate(-50%, -50%); /* Düzgün merkezleme */
+    
+    /* CSS ile beş köşeli yıldız çizimi (::before ve ::after kullanılarak) */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+}

@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f2f5; /* Yumuşak Gri */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+}
+
+canvas {
+    border: 5px solid #2980b9; /* Canlı Mavi Çerçeve */
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    cursor: crosshair; /* Çizim imleci */
+}
+
+.toolbox {
+    background-color: #34495e; /* Koyu Gri/Mavi Arka Plan */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    width: 800px; /* Kanvas genişliğiyle aynı */
+    margin-top: 15px;
+}
+
+.toolbox > * {
+    background-color: #ecf0f1; /* Açık Gri Butonlar */
+    color: #2c3e50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 5px;
+    height: 40px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.toolbox > *:hover {
+    background-color: #bdc3c7;
+}
+
+.toolbox > *:active {
+    transform: scale(0.98);
+}
+
+/* Fırça Boyutunu Gösteren Alan */
+#size {
+    background-color: #3498db; /* Mavi Arka Plan */
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    width: auto;
+    min-width: 40px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Renk Seçici */
+#color {
+    padding: 0;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    -webkit-appearance: none; /* Varsayılan Chrome stilini kaldırır */
+    border-radius: 50%;
+}
+
+/* Renk Seçicinin iç yuvarlak kısmını gizleme */
+#color::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+#color::-webkit-color-swatch {
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Temizle Butonunu sağa itme */
+.toolbox > *:last-child {
+    margin-left: auto;
+    font-size: 1.2rem;
+}

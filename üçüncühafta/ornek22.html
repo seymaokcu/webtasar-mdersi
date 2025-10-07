@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Iframe Örneği</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background: linear-gradient(to right, #4facfe, #00f2fe);
+                text-align: center;
+                color: #222;
+            }
+
+            .container{
+                background-color: white;
+                width: 70%;
+                margin: 50px auto;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(0,0,0,0.3);
+                opacity: 0.95;
+            }
+
+            iframe{
+                width: 80%;
+                height: 300px;
+                border: 2px solid #333;
+                border-radius: 10px;
+                margin-top: 15px;
+            }
+
+            a{
+                display: inline-block;
+                background-color: #2196F3;
+                color: white;
+                text-decoration: none;
+                padding: 10px 15px;
+                margin: 5px;
+                border-radius: 6px;
+                transition: background-color 0.3s;
+            }
+
+            a:hover{
+                background-color: #0b7dda;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>HTML iframe Örneği</h2>
+            <p>Aşağıdaki bağlantılardan birine tıklayarak iframe içinde farklı sayfalar görüntüleyebilirsin:</p>
+
+            <!--Menü bağlantıları-->
+            <a href="https://www.w3schools.com/html/" target="bilgiframe">HTML</a>
+            <a href="https://www.w3schools.com/css/" target="bilgiframe">CSS</a>
+            <a href="https://www.w3schools.com/js/" target="bilgiframe">JavaScript</a>
+
+            <br><br>
+
+            <!--iframe alanı-->
+            <iframe src="https://www.w3schools.com" name="bilgiframe" frameborder="0"></iframe>
+
+            <p><i>Yukardaki menüden tıklayarak içeriği değiştir.</i></p>
+        </div>
+    </body>
+</html>

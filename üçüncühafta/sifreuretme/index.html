@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kapsamlı Güvenli Şifre Üretici</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
+  <body>
+    <div class="pw-container">
+      <h2 class="app-title">Güvenli Şifre Üretici</h2>
+
+      <div class="pw-header">
+        <div class="pw">
+          <span id="pw">Üretmek için tıklayın</span>
+          <button id="copy" title="Kopyala"><i class="fas fa-copy"></i> Kopyala</button>
+        </div>
+      </div>
+
+      <div class="pw-body">
+        
+        <div class="form-control length-control">
+          <label for="len">Şifre Uzunluğu: <span id="len-value">8</span></label>
+          <input
+            id="len"
+            type="range"
+            min="8"
+            max="25" 
+            value="8"
+          />
+        </div>
+        
+        <div class="strength-container">
+            <span id="strength-indicator" class="strength-weak">Çok Kısa / Zayıf</span>
+        </div>
+
+        <div class="form-control">
+          <label for="upper">Büyük Harf İçersin (A-Z)</label>
+          <input id="upper" type="checkbox" checked />
+        </div>
+        <div class="form-control">
+          <label for="lower">Küçük Harf İçersin (a-z)</label>
+          <input id="lower" type="checkbox" checked />
+        </div>
+        <div class="form-control">
+          <label for="number">Sayı İçersin (0-9)</label>
+          <input id="number" type="checkbox" />
+        </div>
+        <div class="form-control">
+          <label for="symbol">Sembol İçersin (!@#$...)</label>
+          <input id="symbol" type="checkbox" />
+        </div>
+        
+        <button class="generate" id="generate"><i class="fas fa-sync-alt"></i> Şifre Üret</button>
+      </div>
+    </div>
+    
+    <div id="alert-container"></div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

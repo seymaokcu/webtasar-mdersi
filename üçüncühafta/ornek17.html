@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Poisitioning & Float Örneği</title>
+        <style>
+            /*genel ayarlar*/
+            body{
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background-color: #f0f8ff;
+            }
+            h1{
+                text-align: center;
+                color: #333;
+            }
+
+            /*merkezde duran kutu*/
+            .center-box{
+                margin-left: auto;
+                margin-right: auto;
+                width: 70%;
+                background-color: #b0e0e6;
+                padding: 20px;
+                border: 2px solid steelblue;
+                text-align: center;
+                border-radius: 10px;
+            }
+
+            /*sola yaslanmış kutu*/
+            .left-box{
+                float: left;
+                width: 200px;
+                height: 150px;
+                background-color: #90ee90;
+                margin: 10px;
+                border: 2px solid green;
+                text-align: center;
+                line-height: 150px;
+                font-weight: bold;
+            }
+
+            /*sağa yaslanmış kutu*/
+            .right-box{
+                float: right;
+                width: 200px;
+                height: 150px;
+                background-color: #ffcccb;
+                margin: 10px;
+                border: 2px solid red;
+                text-align: center;
+                line-height: 150px;
+                font-weight: bold;
+            }
+
+            /*normal akıştaki paragraf*/
+            .content{
+                text-align: justify;
+                padding: 15px;
+            }
+
+            /*fixed kutu (sayfada sabit kalan)*/
+            .fixed-box{
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background-color: #ffd700;
+                padding: 10px;
+                border: 2px solid orange;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+
+            /*absolute pozisyonlu kutu*/
+            .container{
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                background-color: #add8e6;
+                padding: 10px 20px;
+                border: 2px solid blue;
+                font-weight: bold;
+            }
+
+            /*float temizleme*/
+            .clear{
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Position, Float ve Align Örneği</h1>
+
+        <div class="center-box">
+            Bu kutu <b>margin:auto</b> ile oratlandı
+        </div>
+
+        <div class="left-box">Sol Kutu</div>
+        <div class="right-box">Sağ Kutu</div>
+
+        <p class="content">
+            Bu paragraf, float ile yerleştirilen kutuların arasında akar. Float kullandığımızda metin bu kutuların etrafında dolaşır.
+            Eğer kutulardan sonra normal akışa dönmek istersek <b>clear:both;</b> özelliğini kullanırız
+        </p>
+
+        <div class="clear"></div>
+
+        <div class="container">
+            <p>Bu gri kutunun içinde absolute konumlu bir kutu var</p>
+            <div class="absolute-box">Ben absolute'im</div>
+        </div>
+
+        <div class="fixed-box"> Fixed Kutu(Sabit Kalır)</div>
+    </body>
+</html>

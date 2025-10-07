@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kapsamlı Bilgi Yarışması Uygulaması</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="quiz-container" id="quiz">
+      <div class="quiz-header">
+        <div id="question-tracker">Soru 1/X</div>
+        <h2 id="question">Soru metni yükleniyor...</h2>
+
+        <ul class="options-list">
+            <li>
+                <input id="a" type="radio" name="answer" class="answer" value="a" />
+                <label id="a_text" for="a"> Seçenek A</label>
+            </li>
+            <li>
+                <input id="b" type="radio" name="answer" class="answer" value="b" />
+                <label id="b_text" for="b"> Seçenek B</label>
+            </li>
+            <li>
+                <input id="c" type="radio" name="answer" class="answer" value="c" />
+                <label id="c_text" for="c"> Seçenek C</label>
+            </li>
+            <li>
+                <input id="d" type="radio" name="answer" class="answer" value="d" />
+                <label id="d_text" for="d"> Seçenek D</label>
+            </li>
+        </ul>
+        
+        <div id="feedback" class="hidden"></div>
+      </div>
+      
+      <button id="submit">Gönder</button>
+    </div>
+  </body>
+</html>

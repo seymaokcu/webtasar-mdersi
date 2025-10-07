@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d1c4e9; /* Açık Mor */
+    background-image: linear-gradient(315deg, #d1c4e9 0%, #ede7f6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card ve button tasarımı */
+.quiz-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 550px;
+    max-width: 100%;
+}
+
+.quiz-header {
+    padding: 2.5rem;
+}
+
+#question-tracker {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #6a1b9a; /* Koyu Mor */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+h2 {
+    text-align: left;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Seçenek Listesi */
+.options-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.options-list li {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    background-color: #f3e5f5; /* Çok Açık Mor */
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.options-list li:hover {
+    background-color: #e1bee7; /* Açık Mor */
+}
+
+/* Radio Buttonları Gizle ve Label'ı Stilize Et */
+.answer {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.options-list label {
+    display: block;
+    cursor: pointer;
+    padding-left: 30px; /* Sahte radio butonu için boşluk */
+    position: relative;
+}
+
+/* Sahte Radio Butonu */
+.options-list label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #9c27b0; /* Mor kenarlık */
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.2s;
+}
+
+/* Seçili Sahte Radio Butonu */
+.answer:checked + label::before {
+    background-color: #9c27b0; /* Mor dolgu */
+    box-shadow: 0 0 0 4px #e1bee7;
+}
+
+/* --- Buton Stili --- */
+button {
+    background-color: #673ab7; /* Koyu Mavi/Mor */
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 1.5rem;
+    outline: none;
+    border-radius: 0 0 15px 15px; /* Sadece alt köşeler yuvarlak */
+    transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #512da8;
+}
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* --- Geri Bildirim ve Sonuç Ekranı --- */
+#feedback {
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.feedback-success {
+    background-color: #e8f5e9; /* Açık Yeşil */
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.feedback-error {
+    background-color: #ffebee; /* Açık Kırmızı */
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.result-screen {
+    text-align: center;
+    padding: 3rem;
+}
+
+.result-screen h2 {
+    font-size: 2rem;
+    color: #673ab7;
+}
+
+.result-screen p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.result-screen .message {
+    font-style: italic;
+    color: #4a148c;
+    margin-top: 20px;
+}
+
+.result-screen button {
+    margin-top: 30px;
+    border-radius: 5px;
+    width: 80%;
+}

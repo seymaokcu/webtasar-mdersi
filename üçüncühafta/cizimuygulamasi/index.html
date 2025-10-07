@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişmiş Çizim Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1>Çizim Tahtası</h1>
+    <canvas id="canvas" width="800" height="600"></canvas> <div class="toolbox">
+        <button id="decrease" title="Fırça Boyutunu Küçült">-</button>
+        <span id="size" class="brush-size-display">30</span>
+        <button id="increase" title="Fırça Boyutunu Büyüt">+</button>
+        <input type="color" id="color" title="Renk Seçici"/>
+        <button id="clear" title="Temizle"><i class="fas fa-trash"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

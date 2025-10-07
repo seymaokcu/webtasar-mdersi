@@ -1,0 +1,301 @@
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #080c14; /* Ana Arka Plan */
+    --accent-blue: #00aaff; /* Vurgu Mavi (Uzay Işığı) */
+    --text-light: #f0f8ff; /* Açık Metin */
+    --text-muted: #cccccc; /* Soluk Metin */
+    --dark-section: #0a111f; /* Farklı Bölüm Arka Planı */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Orbitron', sans-serif; /* Uzay Fontu */
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* HEADER & NAVİGASYON */
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: rgba(8, 12, 20, 0.95); /* Yarı saydam arka plan */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    color: var(--accent-blue);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 15px;
+    margin: 0 5px;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+.menu-toggle {
+    display: none; /* Masaüstünde gizle */
+    background: none;
+    border: none;
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* PARALLAX BÖLÜMÜ */
+.parallax {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    background-color: #010203; 
+    overflow: hidden;
+    /* Gerekli olduğunda, buraya arka plan görseli eklenebilir */
+}
+
+.parallax img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+/* Z-Index Sıralaması */
+.layer-4 { z-index: 1; }
+.layer-3 { z-index: 2; }
+.layer-2 { z-index: 3; }
+.layer-1 { z-index: 4; } 
+
+.parallax .text {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    color: var(--text-light);
+    text-shadow: 0 0 20px var(--accent-blue), 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%); 
+    z-index: 5; 
+}
+
+/* 2. VE 3. İÇERİK BÖLÜMLERİ */
+.content, .features-section {
+    background-color: var(--bg-dark);
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.content h2, .features-section h2, .contact-section h2 {
+    color: var(--accent-blue);
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.content p {
+    max-width: 800px;
+    margin: 0 auto 15px;
+    font-size: 1.1rem;
+}
+
+/* ÖZELLİKLER GRİD DÜZENİ */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background-color: var(--dark-section);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--accent-blue);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.4);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+/* İLETİŞİM BÖLÜMÜ */
+.contact-section {
+    background-color: var(--dark-section);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    padding: 15px;
+    border: 1px solid var(--accent-blue);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form select option {
+    background-color: var(--bg-dark);
+}
+
+.btn {
+    background-color: var(--accent-blue);
+    color: var(--bg-dark);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--text-light);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    background-color: #010203;
+    color: var(--text-muted);
+}
+
+/* YUKARI ÇIK BUTONU */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-blue);
+    color: var(--bg-dark);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: 0.3s;
+    z-index: 90;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+}
+
+/* RESPONSIVE TASARIM */
+@media (max-width: 768px) {
+    .parallax .text {
+        font-size: 3rem;
+        letter-spacing: 5px;
+        white-space: nowrap;
+    }
+    
+    /* Mobil Menü Düzenlemesi */
+    .nav-links {
+        display: none; /* Varsayılan olarak menü gizli */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Header yüksekliğine göre ayarlandı */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-dark);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .nav-links.active {
+        display: flex; /* JavaScript ile menü açıldığında */
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        display: block;
+        text-align: center;
+        padding: 15px 0;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .content h2, .features-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .feature-card {
+        margin-bottom: 20px;
+    }
+}

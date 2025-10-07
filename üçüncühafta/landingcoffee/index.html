@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lezzetli Kahve | Online Satın Al</title>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main-content">
+            
+            <header>
+                <nav>
+                    <a href="#home" class="logo" aria-label="Anasayfa"><i class="fa fa-coffee"></i> Lezzetli Kahve</a>
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#products">Menü & Ürünler</a></li>
+                        <li><a href="#contact">İletişim</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main class="content" id="home">
+                <section class="hero-left">
+                    <h1>Güne Bir <span>Kahveyle</span> Başla</h1>
+                    <p>En kaliteli çekirdekler, özenle kavrulmuş tatlar. Yeşil kahve dünyasının enerjisini bizimle keşfet.</p>
+                    
+                    <a href="#products" class="btn">Kahve Seç & Satın Al</a>
+
+                    <div class="social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> 
+                    </div>
+                </section>
+                <aside class="hero-right">
+                    <img src="img/coffee.png" alt="Bir fincan sıcak kahve" class="hero-img">
+                </aside>
+            </main>
+            
+            <section class="products-section" id="products">
+                <h2>Özel Lezzetlerimiz</h2>
+                <div class="product-grid">
+                    
+                    <div class="product-card">
+                        <img src="img/espresso.jpg" alt="Yoğun Espresso Çekirdekleri">
+                        <h3>Yoğun Espresso</h3>
+                        <p>Koyu kavrulmuş, güçlü ve kadifemsi krema. Sabah ritüelinizin vazgeçilmezi.</p>
+                        <span class="price">95 TL</span>
+                        <a href="#" class="add-to-cart-btn">Sepete Ekle</a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="img/filter.jpg" alt="Orta Kavrulmuş Filtre Kahve Çekirdekleri">
+                        <h3>Özel Filtre Blend</h3>
+                        <p>Orta kavrulmuş, meyvemsi notalı, dengeli ve temiz bir içim sunar.</p>
+                        <span class="price">85 TL</span>
+                        <a href="#" class="add-to-cart-btn">Sepete Ekle</a>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="img/decaf.jpg" alt="Kafeinsiz Kahve Çekirdekleri">
+                        <h3>Kafeinsiz Keyif</h3>
+                        <p>İsviçre su yöntemi ile kafeini alınmış, tam gövdeli lezzet.</p>
+                        <span class="price">90 TL</span>
+                        <a href="#" class="add-to-cart-btn">Sepete Ekle</a>
+                    </div>
+
+                </div>
+            </section>
+            
+            <section class="contact-section" id="contact">
+                <h2>Bize Ulaşın</h2>
+                <div class="contact-content">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Adınız Soyadınız" required>
+                        <input type="email" placeholder="E-posta Adresiniz" required>
+                        <textarea placeholder="Mesajınız..." rows="5" required></textarea>
+                        <button type="submit" class="btn">Gönder</button>
+                    </form>
+                    <div class="contact-info">
+                        <h3>Mağaza Bilgileri</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Kahve Sokak No: 5, İstanbul</p>
+                        <p><i class="fas fa-phone"></i> +90 555 123 45 67</p>
+                        <p><i class="fas fa-envelope"></i> info@lezzetlikahve.com</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Lezzetli Kahve. Tüm hakları saklıdır.</p>
+        </footer>
+    </body>
+</html>

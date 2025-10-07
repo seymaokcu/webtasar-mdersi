@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tablo ve Box Model Örneği</title>
+        <style>
+            /*tablo genişlik ve yükseklik*/
+            table{
+                width: 100%;
+                border-collapse: collapse; /*çift çizgiyi engeller*/
+            }
+            th{
+                height: 50px;
+                background-color: green;
+                color: white;
+            }
+            /*kenarlıklar*/
+            table, th, td{
+                border: 1px solid green;
+            }
+
+            /*hücre içi boşluk*/
+            td, th{
+                padding: 15px;
+            }
+            /*hizalama*/
+            td{
+                text-align: right; /*yatay hizalama sağa*/
+                height: 50px;
+                vertical-align: bottom; /*dikey hizalama alta*/
+            }
+            /*box model örneği*/
+            .box{
+                width: 300px; 
+                margin: 20px; /*dış boşluk*/
+                border: 5px solid blue; /*kenarlık*/
+                padding: 15px; /*iç boşluk*/
+                background-color: lightyellow; /*iç alan*/
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Tablo özelliği</h2>
+        <table>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Yaş</th>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>Kaya</td>
+                <td>20</td>
+            </tr>
+        </table>
+        <h2>CSS Box Model Örneği</h2>
+        <div class="box">
+            Bu kutunun <b>content</b> kısmı burasıdır.
+            İçinde padding var (iç boşluk), dışarda margin var (dış boşluk).
+            Çevresinde mavi bir border çizgisi var.
+        </div>
+    </body>
+</html>

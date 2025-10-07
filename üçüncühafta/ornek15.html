@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grouping, Nesting, Display ve Visibility Örneği</title>
+        <style>
+            /*-------Grouping Selectors------*/
+            h1, h2, p{
+                color: green;
+                text-align: center;
+            }
+
+            /*------Nesting Selectors------*/
+            .marked{
+                background-color: lightcoral;
+                padding: 10px;
+                margin: 10px;
+            }
+
+            .marked p{
+                color: white;
+                font-weight: bold;
+            }
+
+            /*-------Display Property-----*/
+            ul{
+                text-align: center;
+                padding: 0;
+            }
+            li{
+                display: inline; /*normalde block'tur ama şimdi yan yana*/
+                margin: 0 10px;
+                background-color: ligthgreen;
+                padding: 5px 10px;
+                border-radius: 5px;
+            }
+
+            /*--------Visibility & Display None-------*/
+            .hidden1{
+                visibility: hidden; /*görünmez ama alanı duruyor*/
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Grouping ve Nesting Örneği</h1>
+        <h2>Alt Başlık</h2>
+        <p>Bu paragraf <b>h1</b> ve <b>h2</b> ile aynı grup stili alır.</p>
+
+        <div class="marked">
+            <h3>İç içe Seçici (Nesting)</h3>
+            <p>Bu paragraf .marked içinde olduğu için beyaz görünüyor.</p>
+        </div>
+
+        <h2>Display Özelliği</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+
+        <h2>Visibility ve Display None</h2>
+        <p class="hidden1">Ben görünmüyorum ama alanım hala duruyor (visibility:hiden)</p>
+        <p class="hidden2">Ben tamamen yokum (display:none)</p>
+        <p>Bu paragraf normal görünür</p>
+    </body>
+</html>

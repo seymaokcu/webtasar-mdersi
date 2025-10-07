@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS Örnek sayfa</title>
+        <style>
+            /*arka plan*/
+            body{
+                background-color: #b0c4de;
+                background-image: url('gradient2.png');
+                background-repeat: repeat-x;
+                color: blue; /*varsayılan yazı rengi*/
+            }
+
+            h1{
+                background-color: #6495ed;
+                color: #00ff00;
+                text-align: center;
+                text-decoration: overline;
+            }
+
+            h2{
+                color: rgb(255,0,0);
+                text-decoration: line-trough;
+            }
+
+            h3{
+                text-decoration: underline;
+            }
+
+            p.date{
+                text-align: right;
+            }
+
+            p.main{
+                text-align: justify;
+                text-indent: 50px;
+                font-family: "Times New Roman", Times, serif;
+            }
+
+            p.uppercase{
+                text-transform: uppercase;
+            }
+
+            p.lowercase{
+                text-transform: lowercase;
+            }
+
+            p.capitalize{
+                text-transform: capitalize;
+            }
+
+            p.normal{
+                font-style: normal;
+            }
+
+            p.italic{
+                font-style: italic;
+            }
+
+            a{
+                text-decoration: none;
+            }
+
+            div{
+                background-color: #e0ffff;
+                padding: 10px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Deneme Başlığı</h1>
+        <h2>İkinci başlık</h2>
+        <h3>üçüncü başlık</h3>
+
+        <p class="date">02.10.2025</p>
+
+        <div>
+            <p class="main">Bu paragraf times new roman fontu ile yazıldı
+                ayrıca 50px girintili ve justify ile hizalandı
+            </p>
+        </div>
+        <p class="uppercase">bu yazı tamamen büyük harflerle yazıldı</p>
+        <p class="lowercase">bu yazı tamamen küçük harflerle yazıldı</p>
+        <p class="capitalize">bu yazının her kelimesinin ilk harfi büyük yazıdı</p>
+
+        <p class="normal">bu yazı normal stil</p>
+        <p class="italic">bu yazı italik stil</p>
+
+        <p><a href="#">bu bir linktir ama altı çizili değil</a></p>
+    </body>
+</html>

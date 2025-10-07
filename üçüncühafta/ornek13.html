@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Box Model ve Border Örneği</title>
+        <style>
+            /*ortak kutu stili*/
+            .box{
+                width: 220px; /*içerik genişliği*/
+                height: 80px; /*içerik yüksekliği*/
+                padding: 10px; /*içerik ile kenarlık arası boşluk*/
+                margin: 10px; /*kutular arası dış boşluk*/
+                background-color: #f9f9f9;
+            }
+
+            /*farklı border stilleri*/
+            .solid{
+                border: 5px solid gray;
+            }
+            .dotted{
+                border: 5px dotted blue;
+            }
+            .dashed{
+                border: 5px dashed red;
+            }
+            .double{
+                border: 5px double green;
+            }
+            .groove{
+                border: 10px groove purple;
+            }
+            .ridge{
+                border: 10px ridge orange;
+            }
+            .inset{
+                border: 10px inset teal;
+            }
+            .outset{
+                border: 10px outset brown;
+            }
+
+            /*özel border genişliği ve renkleri*/
+            p.one{
+                border-style: solid;
+                border-width: 5px;
+                border-color: red;
+                padding: 10px;
+            }
+            p.two{
+                border-style: solid;
+                border-width: medium;
+                border-color: #98bf21;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Box Model Hesaplama</h2>
+        <div class="box solid">
+            width:220px + padding:20px + border:10px = toplam 250px genişlik
+        </div>
+        <h2>Farklı Border Stilleri</h2>
+        <div class="box dotted">Dotted Border</div>
+        <div class="box dashed">Dashed Border</div>
+        <div class="box double">Double Border</div>
+        <div class="box groove">Groove Border</div>
+        <div class="box ridge">Ridge Border</div>
+        <div class="box inset">Inset Border</div>
+        <div class="box outset">Outset Border</div>
+
+        <h2>Border Width & Color</h2>
+        <p class="one">BU kutunun kenarlığı kırmızı ve 5px kalınlığında</p>
+        <p class="two">Bu kutunun kenarlığı #98bf21 renginde ve medium kalınlıkta</p>
+    </body>
+</html>

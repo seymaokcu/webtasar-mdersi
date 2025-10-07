@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kozmik Yolculuk | Evrenin Sırları</title>
+    <meta name="description" content="Parallax efektiyle uzayın derinliklerini keşfedin. Bilim ve astronomi odaklı modern bir web deneyimi.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">KOZMİK</a>
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="#home" class="nav-link active">ANA SAYFA</a></li>
+                    <li><a href="#mission" class="nav-link">MİSYON</a></li>
+                    <li><a href="#features" class="nav-link">ÖZELLİKLER</a></li>
+                    <li><a href="#contact" class="nav-link">İLETİŞİM</a></li>
+                </ul>
+            </div>
+            <button class="menu-toggle" aria-label="Menü Aç/Kapa">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="parallax" id="home"> 
+        <img src="images/layer-4.png" class="layer-4" alt="Uzak yıldızlar ve Samanyolu"> 
+        <img src="images/layer-3.png" class="layer-3" alt="Büyük bir nebula bulutu">
+        <h1 class="text">KOZMİK YOLCULUK</h1>
+        <img src="images/layer-2.png" class="layer-2" alt="Yakın planda meteoritler">
+        <img src="images/layer-1.png" class="layer-1" alt="Uzay gemisi kokpiti veya teleskop çerçevesi">
+    </section>
+
+    <section class="content" id="mission">
+        <div class="container">
+            <h2 data-aos="fade-up">Misyonumuz</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Evrenin sınırsızlığını dijital ortamda keşfedilebilir kılmak. Görsel şölen sunan parallax efekti ile bilimi ve keşif ruhunu bir araya getiriyoruz. Her kaydırma hareketi, sizi yeni bir galaksiye taşır.</p>
+            <p data-aos="fade-up" data-aos-delay="200">Karanlık maddenin gizemlerinden, öte gezegenlerin yaşam potansiyeline kadar, en güncel astronomi bilgilerini etkileyici bir arayüzle sunmayı hedefliyoruz.</p>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 data-aos="fade-up">Keşif Özellikleri</h2>
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-telescope"></i>
+                    <h3>Gelişmiş Gözlem</h3>
+                    <p>En modern teleskop verileri ile oluşturulmuş katmanlı görsellerin keyfini çıkarın.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-brain"></i>
+                    <h3>Bilimsel Derinlik</h3>
+                    <p>Karanlık madde ve enerjinin ardındaki bilimsel hipotezleri keşfetme fırsatı.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Sınırsızlık Hissi</h3>
+                    <p>Parallax'ın farklı hızları sayesinde uzayda süzülüyormuş gibi hissedin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Bize Ulaşın</h2>
+            <form class="contact-form" data-aos="fade-up" data-aos-delay="100">
+                <input type="text" placeholder="Adınız Soyadınız" required>
+                <input type="email" placeholder="E-posta Adresiniz" required>
+                <select required>
+                    <option value="" disabled selected>Konu Seçin</option>
+                    <option value="geri-bildirim">Geri Bildirim</option>
+                    <option value="teknik-sorun">Teknik Sorun</option>
+                    <option value="is-birligi">İş Birliği</option>
+                </select>
+                <textarea placeholder="Mesajınız..." rows="5" required></textarea>
+                <button type="submit" class="btn">Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kozmik Yolculuk. Tüm hakları saklıdır. | Geri Dönüş Butonu eklendi.</p>
+        </div>
+    </footer>
+
+    <a href="#home" class="scroll-to-top" aria-label="Sayfa Başına Dön">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

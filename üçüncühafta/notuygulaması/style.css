@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8eaf6; /* Açık morumsu arka plan */
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* --- Header ve Butonlar --- */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #c5cae9;
+    margin-bottom: 20px;
+}
+
+.app-title {
+    color: #3f51b5; /* Koyu Mavi */
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#search {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #c5cae9;
+    width: 250px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+#search:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.5);
+}
+
+.yeniNot {
+  background-color: #4caf50; /* Yeşil */
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.yeniNot:hover {
+    background-color: #388e3c;
+}
+
+/* --- Not Konteyneri --- */
+#notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.not {
+    /* Genel not görünümü */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Daha standart bir not genişliği */
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --- Araçlar ve Başlık Alanı --- */
+.araclar {
+    background-color: rgba(0, 0, 0, 0.1); /* Not renginin üzerinde hafif koyu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    flex-shrink: 0; /* Küçülmesini engelle */
+}
+
+.araclar button {
+    background-color: transparent;
+    border: none;
+    color: #333; /* Daha görünür simge rengi */
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 5px;
+    transition: color 0.2s;
+}
+
+.araclar button:hover {
+    color: #3f51b5;
+}
+
+.araclar .sil:hover {
+    color: #d32f2f; /* Sil butonu için kırmızı */
+}
+
+.not-baslik {
+    flex-grow: 1;
+    padding: 5px 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #333;
+}
+.not-baslik[disabled] {
+    opacity: 1; /* Disabled olsa bile rengi solmasın */
+}
+
+/* Renk Seçici */
+.renk-secici {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+
+/* --- İçerik Alanı --- */
+
+.notSayfa,
+textarea {
+    flex-grow: 1; /* Kalan alanı kapla */
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    border: none;
+    outline: none;
+    overflow-y: auto;
+}
+
+.notSayfa {
+    background-color: transparent; /* Renk ana container'dan gelecek */
+}
+
+textarea {
+    resize: none;
+    background-color: transparent; /* Renk ana container'dan gelecek */
+    font-family: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Tarih Bilgisi */
+.tarih-bilgisi {
+    font-size: 0.75rem;
+    color: #666;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    text-align: right;
+}
+
+/* Markdown Stil Düzeltmeleri */
+.notSayfa h1,
+.notSayfa h2,
+.notSayfa h3 {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-bottom: 1px solid #ccc;
+}
+.notSayfa p {
+    margin: 5px 0;
+}
+
+
+/* --- Duyarlılık (Responsive) --- */
+@media (max-width: 800px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+    #search {
+        width: 100%;
+    }
+    .yeniNot {
+        width: 100%;
+    }
+    #notes-container {
+        justify-content: center;
+    }
+}

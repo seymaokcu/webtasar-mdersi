@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS Örnek sayfa2</title>
+        <style>
+            /*yazı boyutları*/
+            body{font-size: 100%; font-family: "Times New Roman", Times, serif;}
+            h1{font-size: 2.5em;} /*40px*/
+            h2{font-size: 1.875em;} /*30px*/
+            p{font-size: 0.875em;} /*14px*/
+
+            /*link stilleri*/
+            a:link{color: #FF0000; text-decoration: none; background-color: #B2FF99;}
+            a:visited{color: #00FF00; text-decoration: none; background-color:#FFFF85;}
+            a:hover{color: #FF00FF; text-decoration: underline; background-color: #FF704D;}
+            a:active{color: #0000FF; text-decoration: underline; background-color: #FF704D;}
+
+            /*liste stilleri*/
+            ul.circle{list-style-type: circle;}
+            ul.square{list-style-type: square;}
+            ol.roman{list-style-type: upper-roman;}
+            ol.alpha{list-style-type: lower-alpha;}
+            ul.image{list-style-image: url('sqpurle.gif');}
+
+            /*tablo stilleri*/
+            table{
+                border-colapse: collapse;
+                width: 50%;
+                margin-top: 20px;
+            }
+            table, th, td{
+                border: 1px solid black;
+                padding: 8px;
+                text-align: center;
+            }
+                        
+        </style>
+    </head>
+    <body>
+        <h1>CSS Deneme Başlığı</h1>
+        <h2>Alt Başlık</h2>
+        <p>Bu bir paragraf örneğidir. font boyutu 14px (0.875em) olacak şekilde ayarlandı</p>
+
+        <h2>Link Örneği</h2>
+        <p><a href="#">Buraya tıkla</a></p>
+
+        <h2>Liste Örnekleri</h2>
+        <ul class="circle">
+            <li>Yuvarlak işaretli liste</li>
+            <li>İkinci madde</li>
+        </ul>
+
+        <ul class="square">
+            <li>Kare işaretli liste</li>
+            <li>İkinci madde</li>
+        </ul>
+
+        <ol class="roman">
+            <li>Roma rakamlı liste</li>
+            <li>İkinci madde</li>
+        </ol>
+
+        <ol class="alpha">
+            <li>ALfabetik liste</li>
+            <li>İkinci madde</li>
+        </ol>
+
+        <h2>Tblo örneği</h2>
+        <table>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Yaş</th>
+            </tr>
+            <tr>
+                <td>Ali</th>
+                <td>Yılmaz</th>
+                <td>22</th>
+            </tr>
+            <tr>
+                <td>Ayşe</td>
+                <td>Kaya</td>
+                <td>22</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Border, Margin, Padding ve Outline Örneği</title>
+        <style>
+            /*sayfa genel ayarları*/
+            body{
+                background-color: #f3f3f3;
+                font-family: Arial, sans-serif;
+            }
+            /*kutu tasarımı*/
+            .kutu{
+                background-color: white;
+                width: 300px;
+                padding: 25px 50px; /*iç boşluk(padding)*/
+                margin: 5px auto;   /*dış boşluk(margin) - ortalama*/
+                border: 5px solid green;  /*kenarlık(border)*/
+                outline: 3px dashed orange;  /*dış çizgi(outline)*/
+                border-top-style: dotted;   /*üst kenar farklı*/
+                border-bottom-style: double;  /*alt kenar farklı*/
+                text-align: center;
+            }
+
+            /*içerik için stiller*/
+            h2{
+                color: darkgreen;
+            }
+            p{
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="kutu">
+            <h2>CSS Kutu Modeli</h2>
+            <p>Bu örnekte border, padding, margin ve outline özellikleri birlikte kullanılmıştır</p>
+        </div>
+    </body>
+</html>

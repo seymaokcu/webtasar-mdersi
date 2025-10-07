@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+.heart {
+    /* İyileştirme: Kalp boyutu ekran yüksekliğinin (viewport height) yarısı yapıldı */
+    font-size: 50vh; 
+    position: relative;
+    color: red; 
+}
+
+.heart-beat {
+    position: relative;
+    z-index: -1;
+    /* İyileştirme: Animasyon süresi 0.8s'den 0.4s'e düşürüldü (daha hızlı) */
+    animation: beat 0.4s linear infinite; 
+}
+
+@keyframes beat {
+    0% {transform: scale(1);}
+    14% {transform: scale(.9) skewX(.004turn)}
+    21% {transform: scale(1.1) skewX(.008turn)}
+    29% {transform: scale(1);}
+    35% {transform: scale(1) skewX(0);}
+    100% {transform: scale(1);} 
+}
+
+.heart-echo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* İyileştirme: Animasyon süresi 0.8s'den 0.4s'e düşürüldü (daha hızlı) */
+    animation: echo 0.4s linear infinite; 
+}
+
+@keyframes echo {
+    0% {opacity: .5; transform: scale(1);}
+    14% {opacity: .8; transform: scale(.8);}
+    21% {opacity: .4; transform: scale(1.1);}
+    /* Yankının bu büyük kalbe oranla daha fazla yayılması için scale değeri artırıldı */
+    100% {opacity: .0; transform: scale(3.5);} 
+}

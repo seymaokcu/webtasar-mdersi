@@ -14,7 +14,6 @@ body {
 }
 
 .heart {
-    /* İyileştirme: Kalp boyutu ekran yüksekliğinin (viewport height) yarısı yapıldı */
     font-size: 50vh; 
     position: relative;
     color: red; 
@@ -23,7 +22,6 @@ body {
 .heart-beat {
     position: relative;
     z-index: -1;
-    /* İyileştirme: Animasyon süresi 0.8s'den 0.4s'e düşürüldü (daha hızlı) */
     animation: beat 0.4s linear infinite; 
 }
 
@@ -42,7 +40,6 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    /* İyileştirme: Animasyon süresi 0.8s'den 0.4s'e düşürüldü (daha hızlı) */
     animation: echo 0.4s linear infinite; 
 }
 
@@ -50,6 +47,5 @@ body {
     0% {opacity: .5; transform: scale(1);}
     14% {opacity: .8; transform: scale(.8);}
     21% {opacity: .4; transform: scale(1.1);}
-    /* Yankının bu büyük kalbe oranla daha fazla yayılması için scale değeri artırıldı */
     100% {opacity: .0; transform: scale(3.5);} 
 }

@@ -32,8 +32,6 @@ body {
     margin-bottom: 20px;
     font-weight: 700;
 }
-
-/* Form ve Giriş Alanı */
 #form {
     display: flex;
     flex-direction: column;
@@ -65,7 +63,6 @@ label {
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
-/* Anlık Hava Durumu Alanı */
 #main {
     margin-bottom: 40px;
     padding: 20px 0;
@@ -116,7 +113,6 @@ label {
     color: #495057;
 }
 
-/* 5 Günlük Tahmin Alanı */
 #forecast-container h2 {
     border-bottom: 2px solid #007bff;
     padding-bottom: 10px;
@@ -129,7 +125,7 @@ label {
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    overflow-x: auto; /* Küçük ekranlar için kaydırma */
+    overflow-x: auto; 
     padding-bottom: 10px;
 }
 
@@ -140,7 +136,7 @@ label {
     padding: 10px;
     min-width: 120px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    flex-shrink: 0; /* Kartların küçülmesini engeller */
+    flex-shrink: 0; 
 }
 
 .forecast-card h3 {
@@ -168,7 +164,6 @@ label {
     color: #6c757d;
 }
 
-/* Uyarı Mesajı */
 #container {
     position: fixed;
     bottom: 20px;
@@ -177,7 +172,7 @@ label {
 }
 
 .mesaj {
-    background-color: #ffc107; /* Sarı renk */
+    background-color: #ffc107; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     color: #333;
@@ -206,7 +201,6 @@ label {
     }
 }
 
-/* Mobil Görünüm İyileştirmesi */
 @media (max-width: 600px) {
     .weather-app {
         padding: 20px;
@@ -223,7 +217,7 @@ label {
         height: 80px;
     }
     #forecast {
-        justify-content: flex-start; /* Yatay kaydırma için */
+        justify-content: flex-start; 
     }
     .forecast-card {
         min-width: 100px;

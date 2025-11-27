@@ -1,20 +1,15 @@
-// OpenWeatherMap API anahtarınız
-const apikey = "8818400a94991b22335b598b510df016";
 
-// DOM Elementleri
+const apikey = "8818400a94991b22335b598b510df016";
 const container = document.getElementById("container");
 const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 const forecastElement = document.getElementById("forecast");
-
-// API URL'leri
 const currentWeatherUrl = (city) =>
   `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&lang=tr`;
 const forecastUrl = (city) =>
   `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apikey}&lang=tr`;
 
-// Kullanıcı girdisiyle her iki API'den de bilgi çeken ana fonksiyon
 async function lokasyonBilgisi(city) {
   try {
     const [currentResp, forecastResp] = await Promise.all([
@@ -37,12 +32,10 @@ async function lokasyonBilgisi(city) {
   }
 }
 
-// Kelvin'i Celsius'a çevirme
 function dereceCevirme(K) {
   return Math.floor(K - 273.15);
 }
 
-// Anlık Hava Durumu Bilgisini Gösterme
 function havaDurumuBilgisi(data) {
   const temp = dereceCevirme(data.main.temp);
   const feelsLike = dereceCevirme(data.main.feels_like);
@@ -64,11 +57,9 @@ function havaDurumuBilgisi(data) {
     `;
 }
 
-// 5 Günlük Hava Durumu Tahminini Gösterme
 function havaDurumuTahmini(data) {
-  forecastElement.innerHTML = ""; // Önceki tahminleri temizle
+  forecastElement.innerHTML = ""; 
 
-  // Her gün için öğlen 12:00 (12:00:00) verisini filtrele
   const dailyForecasts = data.list.filter((reading) =>
     reading.dt_txt.includes("12:00:00")
   );
@@ -95,21 +86,17 @@ function havaDurumuTahmini(data) {
   });
 }
 
-// Form gönderme olayı
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const city = search.value.trim();
 
   if (city) {
     lokasyonBilgisi(city);
-    search.value = ""; // Arama kutusunu temizle
+    search.value = ""; 
   } else {
     uyariMesaji("Lütfen bir şehir adı giriniz.");
   }
 });
-
-// Uyarı/Hata Mesajını Gösterme
-// DÜZELTİLMİŞ uyariMesaji fonksiyonu (eski kod için)
 function uyariMesaji() {
   const notif = document.createElement("div");
   notif.classList.add("mesaj");
@@ -118,5 +105,5 @@ function uyariMesaji() {
   setTimeout(() => {
     notif.remove();
   }, 2000);
-  main.innerHTML = ""; // Sadece temizle, hata varsa bir şey ekleme
+  main.innerHTML = ""; 
 }

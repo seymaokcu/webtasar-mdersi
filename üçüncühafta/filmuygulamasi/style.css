@@ -5,29 +5,29 @@
 }
 
 body {
-    /* Daha zengin, koyu bir arka plan */
+   
     background-color: #1a1a2e; 
     font-family: "Roboto", sans-serif;
     margin: 0;
 }
 
-/* --- Header & Search --- */
+
 
 header {
-    /* Header'ı merkeze almak ve daha belirgin yapmak */
+    
     background-color: #1f4068; 
     display: flex;
-    justify-content: center; /* Aramayı ortala */
+    justify-content: center; 
     padding: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    position: sticky; /* Sayfa kaydırılsa bile üstte kalsın */
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .search {
-    background-color: rgba(255, 255, 255, 0.1); /* Hafif şeffaf */
-    border: 1px solid #ffffff33; /* Hafif beyaz çerçeve */
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid #ffffff33; 
     border-radius: 25px;
     color: #fff;
     font-family: inherit;
@@ -43,25 +43,25 @@ header {
 
 .search:focus {
     background-color: #2c3957;
-    border-color: #00bcd4; /* Odaklandığında belirgin renk */
+    border-color: #00bcd4;
     box-shadow: 0 0 10px #00bcd480;
     outline: none;
 }
 
-/* --- Main Content & Grid --- */
+
 
 main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Film kartlarını ortala */
+    justify-content: center; 
     padding: 2rem 1rem;
-    gap: 30px; /* Kartlar arası boşluk */
+    gap: 30px; 
 }
 
-/* --- Movie Card --- */
+
 
 .movie {
-    background-color: #2c3957; /* Film kartı rengi */
+    background-color: #2c3957; 
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
     overflow: hidden;
@@ -71,14 +71,14 @@ main {
 }
 
 .movie:hover {
-    transform: scale(1.03); /* Kartın üzerine gelince hafif büyüme efekti */
+    transform: scale(1.03); 
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
 }
 
 .movie img {
     width: 100%;
-    height: 450px; /* Posterler için sabit yükseklik */
-    object-fit: cover; /* Resmi sığdırmak için */
+    height: 450px; 
+    object-fit: cover; 
 }
 
 .movie-info {
@@ -97,28 +97,28 @@ main {
     line-height: 1.3;
 }
 
-/* Puan Stili */
+
 .movie-info span {
     background-color: #1a1a2e;
-    border-radius: 50px; /* Yuvarlak puan */
+    border-radius: 50px;
     font-weight: bold;
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;
 }
 .movie-info span.green {
-    color: #27ae60; /* Canlı yeşil */
+    color: #27ae60; 
 }
 .movie-info span.orange {
-    color: #f39c12; /* Canlı turuncu */
+    color: #f39c12; 
 }
 .movie-info span.red {
-    color: #e74c3c; /* Canlı kırmızı */
+    color: #e74c3c; 
 }
 
-/* --- Overview (Açıklama) --- */
+
 
 .overview {
-    background-color: rgba(255, 255, 255, 0.95); /* Yarı şeffaf beyaz */
+    background-color: rgba(255, 255, 255, 0.95); 
     color: #2c3957;
     padding: 1.5rem;
     position: absolute;
@@ -127,7 +127,7 @@ main {
     left: 0;
     bottom: 0;
     right: 0;
-    /* Açıklamayı aşağıda gizle */
+    
     transform: translateY(100%); 
     transition: transform 0.4s ease-out;
 }
@@ -139,15 +139,11 @@ main {
     padding-bottom: 5px;
 }
 
-/* Hover'da Açıklamayı Göster */
+
 .movie:hover .overview {
     transform: translateY(0);
 }
-/* ... (Önceki CSS kodunun tamamı buraya gelecek) ... */
 
-/* --- Yeni Özellikler için CSS --- */
-
-/* Sayfalama Stilleri */
 .pagination {
     display: flex;
     justify-content: center;
@@ -185,7 +181,7 @@ main {
     font-weight: bold;
 }
 
-/* Yükleme ve Hata Mesajları */
+
 .no-results, .error-message, #loading {
     color: #fff;
     font-size: 1.5rem;
@@ -209,7 +205,7 @@ main {
     100% { opacity: 0.5; }
 }
 
-/* Yer Tutucu (Placeholder) Resmi için Stil (CSS ile de yapılabilir) */
+
 .movie img[src*="placeholder"] {
     background-color: #4a5d7c;
     border: 1px solid #00bcd4;
@@ -220,21 +216,15 @@ main {
     justify-content: center;
     font-size: 1.2rem;
 }
-/* ... (Önceki CSS kodunun tamamı buraya gelecek) ... */
 
-/* --- Film Posterleri ve Yer Tutucu Stilleri --- */
 
 .movie img {
     width: 100%;
     height: 450px; 
     object-fit: cover; 
-    /* Yüklenirken veya yer tutucu aktifken bir arka plan rengi */
     background-color: #3b5998; 
 }
-
-/* API'den poster gelmediğinde kullanılan yer tutucu (placeholder) resmi için stil */
 .movie img[src*="placeholder"] {
-    /* Resim yerine bir metin kutusu gibi davranmasını sağla */
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -242,9 +232,8 @@ main {
     color: #eee;
     text-align: center;
     font-weight: bold;
-    /* Metnin poster alanında görünmesini sağlar */
     object-fit: contain; 
     padding: 20px;
-    background-color: #2c3957; /* Kart arka planından biraz farklı bir renk */
-    border: 3px dashed #00bcd4; /* Çerçeve efekti */
+    background-color: #2c3957; 
+    border: 3px dashed #00bcd4; 
 }

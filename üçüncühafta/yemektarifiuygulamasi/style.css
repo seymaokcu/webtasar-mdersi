@@ -25,10 +25,9 @@ img {
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    width: 450px; /* Daha geniş mobil görünüm */
+    width: 450px;
 }
 
-/* --- Header ve Arama --- */
 header {
     display: flex;
     align-items: center;
@@ -47,7 +46,7 @@ header input {
     transition: border-color 0.3s;
 }
 header input:focus {
-    border-color: #ff6347; /* Domates Kırmızısı */
+    border-color: #ff6347; 
     outline: none;
 }
 
@@ -59,15 +58,13 @@ header button {
     margin-left: 10px;
     cursor: pointer;
 }
-
-/* --- Favoriler --- */
 .fav-container {
-    background-color: #fff3e0; /* Açık Şeftali Rengi */
+    background-color: #fff3e0; 
     padding: 0.75rem 1rem;
     text-align: center;
 }
 .fav-container h3 {
-    color: #d84315; /* Koyu Turuncu */
+    color: #d84315;
     margin: 0 0 0.5rem 0;
     font-size: 1.1rem;
 }
@@ -131,7 +128,6 @@ header button {
     font-style: italic;
 }
 
-/* --- Yemek Kartları --- */
 .meal {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -200,12 +196,10 @@ header button {
     font-style: italic;
 }
 
-
-/* --- Pop-up Detay --- */
 .popup-container {
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    align-items: flex-start; /* Üstten başlasın */
+    align-items: flex-start; 
     justify-content: center;
     position: fixed;
     left: 0;
@@ -226,7 +220,7 @@ header button {
     width: 100%;
     margin-top: 50px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    overflow: auto; /*içerik taşarsa kaydırma çubuğu oluştur*/
+    overflow: auto; 
 }
 
 .popup .close-popup {
@@ -240,12 +234,11 @@ header button {
     right: 10px;
     z-index: 10000;
 }
-/* style.css */
+
 .popup-container.hidden {
     opacity: 0;
     pointer-events: none;
-    /* Gerekirse gizlemeyi zorla */
-    /* display: none !important; */ 
+
 }
 
 .meal-info h1 {
@@ -266,8 +259,6 @@ header button {
     padding-bottom: 5px;
     margin-top: 1.5rem;
 }
-
-/* Yeni Meta Alanları */
 .meal-meta {
     display: flex;
     flex-wrap: wrap;

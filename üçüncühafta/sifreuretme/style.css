@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #3c3d2b; /* Koyu arka plan */
+  background-color: #3c3d2b;
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ body {
 }
 
 .pw-container {
-  background-color: #f4e76e; /* Parlak Sarı */
+  background-color: #f4e76e; 
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   min-width: 400px;
   max-width: 90%;
@@ -34,14 +34,12 @@ body {
     margin: 0;
     font-size: 1.8rem;
 }
-
-/* Şifre Görüntüleme Alanı */
 .pw-header {
   padding: 10px 20px 20px;
 }
 
 .pw {
-  background-color: #fff9c4; /* Çok açık sarı */
+  background-color: #fff9c4; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,12 +58,10 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    user-select: all; /* Kullanıcının şifreyi kolayca seçebilmesi için */
-}
+    user-select: all; 
 
-/* Kopyala Butonu */
 .pw button {
-  background-color: #94e8b4; /* Açık Yeşil */
+  background-color: #94e8b4; 
   border: none;
   font-family: inherit;
   font-size: 0.9rem;
@@ -87,8 +83,6 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
-
-/* Şifre Ayarları Bölümü */
 .pw-body {
   padding: 20px;
 }
@@ -117,10 +111,9 @@ body {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: #3c3d2b; /* Checkbox rengi */
+    accent-color: #3c3d2b;
 }
 
-/* Uzunluk Kontrolü Kaydırıcı */
 .length-control {
     flex-direction: column;
     align-items: flex-start;
@@ -131,7 +124,6 @@ body {
     cursor: pointer;
 }
 
-/* Güvenlik Göstergesi */
 .strength-container {
     text-align: right;
     margin-bottom: 10px;
@@ -145,22 +137,19 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Güvenlik Seviyeleri */
 .strength-weak {
-    background-color: #ef9a9a; /* Açık Kırmızı */
+    background-color: #ef9a9a; 
     color: #b71c1c;
 }
 .strength-medium {
-    background-color: #fff176; /* Orta Sarı */
+    background-color: #fff176; 
     color: #f9a825;
 }
 .strength-strong {
-    background-color: #a5d6a7; /* Açık Yeşil */
+    background-color: #a5d6a7; 
     color: #388e3c;
 }
 
-
-/* Şifre Üret Butonu */
 .generate {
   background-color: #94e8b4;
   border: none;
@@ -182,7 +171,6 @@ body {
   color: #94e8b4;
 }
 
-/* --- Uyarı/Mesaj Kutusu --- */
 #alert-container {
     position: fixed;
     bottom: 20px;
@@ -201,11 +189,11 @@ body {
 }
 
 .alert-success {
-    background-color: #4caf50; /* Yeşil */
+    background-color: #4caf50; 
 }
 
 .alert-error {
-    background-color: #f44336; /* Kırmızı */
+    background-color: #f44336;
 }
 
 @keyframes slideIn {

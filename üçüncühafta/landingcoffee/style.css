@@ -1,4 +1,4 @@
-/* 1. Global Ayarlar */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +7,10 @@
 }
 
 :root {
-    /* Renk Paleti: Daha sıcak, kahve tonları */
-    --primary-color: #3E3232; /* Koyu Kahve (Arka plan) */
-    --secondary-color: #A87C7C; /* Kızıl Kahve (Vurgu) */
-    --accent-color: #d4b3b3; /* Açık Kahve (Metin/Link) */
-    --light-bg: #EAEAEA; /* Ürün kartı/Açık arka plan */
+    --primary-color: #3E3232; 
+    --secondary-color: #A87C7C; 
+    --accent-color: #d4b3b3; 
+    --light-bg: #EAEAEA; 
     --dark-text: #222222;
 }
 
@@ -19,16 +18,12 @@ body {
     background-color: var(--primary-color);
     color: var(--accent-color);
     line-height: 1.6;
-    scroll-behavior: smooth; /* Sayfa içi link atlamalarını yumuşak yapar */
+    scroll-behavior: smooth; 
 }
-
-/* 2. Ana Düzen */
 .main-content {
     background-color: var(--primary-color);
     padding: 0 10%;
 }
-
-/* 3. Header ve Navigasyon */
 header {
     width: 100%;
     position: sticky;
@@ -74,8 +69,6 @@ nav ul li a.active {
     background-color: var(--secondary-color);
     color: var(--dark-text);
 }
-
-/* 4. Hero/Home Bölümü */
 .content {
     min-height: 90vh;
     display: flex;
@@ -131,8 +124,6 @@ nav ul li a.active {
     background-color: transparent;
     color: var(--secondary-color);
 }
-
-/* 5. ÜRÜNLER BÖLÜMÜ */
 .products-section {
     padding: 80px 0;
     text-align: center;
@@ -146,7 +137,7 @@ nav ul li a.active {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Esnek kart düzeni */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px;
 }
 
@@ -160,7 +151,7 @@ nav ul li a.active {
 }
 
 .product-card:hover {
-    transform: translateY(-10px); /* Hafif yukarı kayma efekti */
+    transform: translateY(-10px);
 }
 
 .product-card img {
@@ -206,7 +197,6 @@ nav ul li a.active {
     color: var(--accent-color);
 }
 
-/* 6. İLETİŞİM BÖLÜMÜ */
 .contact-section {
     padding: 80px 0;
     text-align: center;
@@ -258,7 +248,6 @@ nav ul li a.active {
     color: var(--secondary-color);
 }
 
-/* 7. Footer */
 footer {
     text-align: center;
     padding: 20px 0;
@@ -267,7 +256,6 @@ footer {
     background-color: #332A2A;
 }
 
-/* 8. Duyarlılık (Responsive) */
 @media (max-width: 992px) {
     .main-content {
         padding: 0 5%;
@@ -304,7 +292,6 @@ footer {
     }
 
     nav ul {
-        /* Basit mobil navigasyon çözümü */
         position: absolute;
         top: 65px;
         left: 0;
@@ -312,7 +299,7 @@ footer {
         background-color: var(--primary-color);
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
         flex-direction: column;
-        display: none; /* JavaScript ile görünür yapılmalıdır */
+        display: none; 
     }
 
     nav ul li {

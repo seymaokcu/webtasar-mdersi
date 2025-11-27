@@ -1,54 +1,47 @@
-/* Genel Stil: İçeriği başlangıçta gizler ve kaybolma efektine hazırlar */
+
 .hidden {
     opacity: 0;
     visibility: hidden;
 }
 
-/* PRELOADER KISMI */
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #f0f0f0; /* Açık gri arka plan */
+    background: #f0f0f0; 
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* ÖNEMLİ: Opaklık (şeffaflık) ve görünürlük geçişi */
     transition: opacity 0.5s ease-out, visibility 0.5s ease-out; 
 }
 
-/* YÜKLEYİCİ (SPINNER) STİLLERİ */
 .loader {
     border: 8px solid #e3e3e3;
-    border-top: 8px solid #ff5722; /* Turuncu-kırmızı renk */
+    border-top: 8px solid #ff5722;
     border-radius: 50%;
     width: 60px;
     height: 60px;
     animation: spin 1s linear infinite; 
 }
 
-/* YUMUŞAK KAYBOLMA SINIFI */
 .fade-out {
-    opacity: 0 !important; /* Opaklığı sıfırlar */
-    visibility: hidden !important; /* Preloader'ın tıklanmasını engeller */
+    opacity: 0 !important; 
+    visibility: hidden !important; 
 }
 
-/* Animasyon Tanımı */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* ANA İÇERİK STİLLERİ */
 #content {
     padding: 40px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    /* İçeriğin de yavaşça görünmesi için geçiş ekliyoruz */
+    
     transition: opacity 1s ease-in;
 }
 

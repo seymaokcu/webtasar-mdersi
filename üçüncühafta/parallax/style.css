@@ -1,4 +1,4 @@
-/* GLOBAL STYLES */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +6,17 @@
 }
 
 :root {
-    --bg-dark: #080c14; /* Ana Arka Plan */
-    --accent-blue: #00aaff; /* Vurgu Mavi (Uzay Işığı) */
-    --text-light: #f0f8ff; /* Açık Metin */
-    --text-muted: #cccccc; /* Soluk Metin */
-    --dark-section: #0a111f; /* Farklı Bölüm Arka Planı */
+    --bg-dark: #080c14;
+    --accent-blue: #00aaff; 
+    --text-light: #f0f8ff; 
+    --text-muted: #cccccc;
+    --dark-section: #0a111f;
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-light);
-    font-family: 'Orbitron', sans-serif; /* Uzay Fontu */
+    font-family: 'Orbitron', sans-serif; 
     line-height: 1.6;
     scroll-behavior: smooth;
 }
@@ -31,12 +31,11 @@ section {
     padding: 80px 0;
 }
 
-/* HEADER & NAVİGASYON */
 header {
     width: 100%;
     position: sticky;
     top: 0;
-    background-color: rgba(8, 12, 20, 0.95); /* Yarı saydam arka plan */
+    background-color: rgba(8, 12, 20, 0.95); 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     z-index: 100;
 }
@@ -77,7 +76,7 @@ nav {
 }
 
 .menu-toggle {
-    display: none; /* Masaüstünde gizle */
+    display: none; 
     background: none;
     border: none;
     color: var(--accent-blue);
@@ -85,14 +84,12 @@ nav {
     cursor: pointer;
 }
 
-/* PARALLAX BÖLÜMÜ */
 .parallax {
     display: flex;
     height: 100vh;
     position: relative;
     background-color: #010203; 
     overflow: hidden;
-    /* Gerekli olduğunda, buraya arka plan görseli eklenebilir */
 }
 
 .parallax img {
@@ -103,7 +100,6 @@ nav {
     object-fit: cover;
 }
 
-/* Z-Index Sıralaması */
 .layer-4 { z-index: 1; }
 .layer-3 { z-index: 2; }
 .layer-2 { z-index: 3; }
@@ -120,8 +116,6 @@ nav {
     transform: translate(-50%, -50%); 
     z-index: 5; 
 }
-
-/* 2. VE 3. İÇERİK BÖLÜMLERİ */
 .content, .features-section {
     background-color: var(--bg-dark);
     text-align: center;
@@ -141,7 +135,6 @@ nav {
     font-size: 1.1rem;
 }
 
-/* ÖZELLİKLER GRİD DÜZENİ */
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -174,7 +167,6 @@ nav {
     margin-bottom: 10px;
 }
 
-/* İLETİŞİM BÖLÜMÜ */
 .contact-section {
     background-color: var(--dark-section);
 }
@@ -218,7 +210,6 @@ nav {
     background-color: var(--text-light);
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 20px 0;
@@ -227,7 +218,6 @@ footer {
     color: var(--text-muted);
 }
 
-/* YUKARI ÇIK BUTONU */
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -251,7 +241,6 @@ footer {
     opacity: 1;
 }
 
-/* RESPONSIVE TASARIM */
 @media (max-width: 768px) {
     .parallax .text {
         font-size: 3rem;
@@ -259,12 +248,11 @@ footer {
         white-space: nowrap;
     }
     
-    /* Mobil Menü Düzenlemesi */
     .nav-links {
-        display: none; /* Varsayılan olarak menü gizli */
+        display: none; 
         flex-direction: column;
         position: absolute;
-        top: 70px; /* Header yüksekliğine göre ayarlandı */
+        top: 70px; 
         left: 0;
         width: 100%;
         background-color: var(--bg-dark);
@@ -272,7 +260,7 @@ footer {
     }
     
     .nav-links.active {
-        display: flex; /* JavaScript ile menü açıldığında */
+        display: flex; 
     }
 
     .nav-links ul {

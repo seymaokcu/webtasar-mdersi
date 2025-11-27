@@ -1,8 +1,7 @@
-// Güncel Tarih ile Hedef Tarih arasındaki farkı hesaplar
+
 function guncelTarih(currentDate) {
     var time = (currentDate - new Date()) / 1000;
     
-    // Total süre 0'dan küçükse 0 döndür
     if (time < 0) {
         return {
             gun: 0,
@@ -22,17 +21,16 @@ function guncelTarih(currentDate) {
     };
 }
 
-// Çevirme animasyonunu başlatır
 function animasyon(span) {
     span.className = "flip";
     setTimeout(function () {
         span.className = "";
-    }, 700); // CSS animasyon süresiyle aynı (0.7s)
+    }, 700); 
 }
 
 function baslat(id, newYear) {
     var timerInterval = setInterval(function () {
-        var zamanEl = document.getElementById(id); // zaman yerine zamanEl kullanıldı
+        var zamanEl = document.getElementById(id); 
         var zamanlayıcı = guncelTarih(newYear);
 
         zamanEl.innerHTML =
@@ -49,22 +47,17 @@ function baslat(id, newYear) {
             zamanlayıcı.saniye +
             "</span>";
 
-        // Animasyon kontrolü ve düzeltmeler
         var spans = zamanEl.getElementsByTagName("span");
         
-        // Saniye animasyonu
         if (spans[3].innerHTML != zamanlayıcı.saniye) {
             animasyon(spans[3]);
         }
         
-        // Dakika animasyonu (Saniye 59'dan 0'a geçtiğinde)
         if (zamanlayıcı.saniye == 59) animasyon(spans[2]);
         
-        // Saat animasyonu (Dakika 59'dan 0'a geçtiğinde)
         if (zamanlayıcı.dakika == 59 && zamanlayıcı.saniye == 59)
             animasyon(spans[1]);
         
-        // Gün animasyonu (Saat 23, Dakika 59, Saniye 59'dan 0'a geçtiğinde)
         if (
             zamanlayıcı.saat == 23 &&
             zamanlayıcı.dakika == 59 &&
@@ -72,7 +65,6 @@ function baslat(id, newYear) {
         )
             animasyon(spans[0]);
 
-        // Tarih kontrolü: Zaman bitti mi?
         if (zamanlayıcı.total < 1) {
             clearInterval(timerInterval);
             zamanEl.innerHTML =
@@ -83,11 +75,10 @@ function baslat(id, newYear) {
 }
 
 window.onload = function () {
-    // Dinamik olarak bir sonraki yılın 1 Ocak'ını hedefle
     const nextYear = new Date().getFullYear() + 1;
     var newYear = new Date(`1 Jan ${nextYear}`);
     
-    // Eğer hedef tarih geçmişte kalmışsa (normalde olmamalı), mevcut yılın sonuna say.
+    
     if (newYear < new Date()) {
         newYear = new Date(`1 Jan ${nextYear + 1}`);
     }

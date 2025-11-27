@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery ile Etiket ve Sınıf Seçici Kullanımı</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .giris-mesaji {
+            font-style: italic;
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>jQuery ile Gelişmiş Seçicilerle (Query Selector) Element Bulma</h2>
+
+    <p class="giris-mesaji">Bu, birinci ve **doğru** eşleşmedir: Merhaba Dünya!</p>
+    <p class="giris-mesaji">Bu, ikinci eşleşmedir: Merhaba İsveç!</p>
+    <div class="giris-mesaji">Bu bir div, bu yüzden bulunmayacak.</div>
+    <p>Bu, sınıfsız bir paragraf, bu yüzden bulunmayacak.</p>
+
+    <hr>
+
+    <p>
+        <strong style="color: darkorange;">Seçici ("p.giris-mesaji") ile Bulunan İlk Elementin İçeriği:</strong>
+        <span id="sonuc-goster"></span>
+    </p>
+
+    <script>
+        $(document).ready(function() {
+
+            const bulunanElementler = $("p.giris-mesaji");
+
+            const ilkElementIcerigi = bulunanElementler.eq(0).html();
+            
+            $("#sonuc-goster").html(ilkElementIcerigi);
+        });
+    </script>
+
+</body>
+</html>

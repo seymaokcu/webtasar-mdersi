@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript ile Sınıf Adına Göre Element Bulma Örneği</title>
+</head>
+<body>
+
+    <h2>JavaScript ile HTML Elementlerini Sınıf Adına Göre Bulma</h2>
+
+    <p class="giris-mesaji">Bu, **birinci** elementtir: Merhaba Dünya!</p>
+    <p class="giris-mesaji">Bu, ikinci elementtir: Merhaba İsveç!</p>
+    <p class="giris-mesaji">Bu, üçüncü elementtir: Merhaba Japonya!</p>
+    <p>Bu, sınıfsız normal bir paragraftır.</p>
+
+    <hr>
+
+    <p>
+        <strong style="color: darkred;">Bulunan İlk Elementin İçeriği:</strong>
+        <span id="sonuc-goster"></span>
+    </p>
+
+    <script>
+        
+        const bulunanElementler = document.getElementsByClassName("giris-mesaji");
+
+        const sonucAlani = document.getElementById("sonuc-goster");
+
+        if (bulunanElementler.length > 0 && sonucAlani) {
+            
+            sonucAlani.innerHTML = bulunanElementler[0].innerHTML;
+        } else {
+            
+            console.warn("Sayfada gerekli elementler bulunamadı.");
+        }
+    </script>
+
+</body>
+</html>

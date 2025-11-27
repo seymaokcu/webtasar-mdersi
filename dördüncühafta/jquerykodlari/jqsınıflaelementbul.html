@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery ile Sınıf Adına Göre Element Bulma Örneği</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .giris-mesaji {
+            font-weight: bold;
+            color: navy;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>jQuery ile HTML Elementlerini Sınıf Adına Göre Bulma</h2>
+
+    <p class="giris-mesaji">Bu, **birinci** sınıf elementidir: Merhaba Dünya!</p>
+    <p class="giris-mesaji">Bu, ikinci sınıf elementidir: Merhaba İsveç!</p>
+    <p class="giris-mesaji">Bu, üçüncü sınıf elementidir: Merhaba Japonya!</p>
+    <p>Bu, sınıfsız normal bir paragraftır.</p>
+
+    <hr>
+
+    <p>
+        <strong style="color: blueviolet;">Bulunan İlk Elementin İçeriği:</strong>
+        <span id="sonuc-goster"></span>
+    </p>
+
+    <script>
+        $(document).ready(function() {
+
+            const bulunanElementler = $(".giris-mesaji");
+
+            const ilkElementIcerigi = bulunanElementler.eq(0).html();
+            $("#sonuc-goster").html(ilkElementIcerigi);
+        });
+    </script>
+
+</body>
+</html>

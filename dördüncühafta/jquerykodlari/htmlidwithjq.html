@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery ile ID'ye Göre Element Bulma Örneği</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h2>jQuery ile HTML Elementi Bulma</h2>
+
+    <p id="mesaj-global">Merhaba Dünya!</p>
+    <p id="mesaj-isvec">Merhaba İsveç!</p>
+    <p id="mesaj-japonya">Merhaba Japonya!</p>
+
+    <hr>
+
+    <p>
+        <strong style="color: purple;">Seçilen Paragrafın İçeriği (jQuery):</strong>
+        <span id="sonuc-goster"></span>
+    </p>
+
+    <script>
+        $(document).ready(function() {
+
+            const hedefElement = $("#mesaj-global");
+
+            $("#sonuc-goster").text(hedefElement.text());
+        });
+    </script>
+
+</body>
+</html>

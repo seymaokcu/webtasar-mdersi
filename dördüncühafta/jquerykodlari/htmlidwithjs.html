@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ID ile Element Bulma ve Gösterme Örneği</title>
+</head>
+<body>
+
+    <h2>ID ile HTML Elementi Bulma</h2>
+
+    <p id="mesaj-bir">Merhaba Dünya!</p>
+    <p id="mesaj-iki">Merhaba İsveç!</p>
+    <p id="mesaj-uc">Merhaba Japonya!</p>
+
+    <hr>
+
+    <p>
+        <strong style="color: blue;">Seçilen Paragrafın İçeriği:</strong>
+        <span id="sonuc-goster"></span>
+    </p>
+
+    <script>
+    
+        const hedefElement = document.getElementById("mesaj-bir");
+
+        const sonucElementi = document.getElementById("sonuc-goster");
+
+        if (hedefElement && sonucElementi) {
+            sonucElementi.innerHTML = hedefElement.innerHTML;
+        } else {
+            console.error("Gerekli HTML elementlerinden biri veya daha fazlası bulunamadı.");
+        }
+    </script>
+
+</body>
+</html>

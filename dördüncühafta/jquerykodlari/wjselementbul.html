@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript ile Etiket Adına Göre Element Bulma Örneği</title>
+</head>
+<body>
+
+    <h2>JavaScript ile Etiket Adına Göre HTML Elementi Bulma</h2>
+
+    <p>Bu, koleksiyondaki **birinci** paragraftır.</p>
+    <p>Bu, koleksiyondaki ikinci paragraftır.</p>
+    <p>Bu, koleksiyondaki üçüncü paragraftır.</p>
+
+    <hr>
+
+    <p>
+        <strong style="color: darkred;">Bulunan İlk Paragrafın İçeriği:</strong>
+        <span id="sonuc-goster"></span>
+    </p>
+
+    <script>
+        const tumParagraflar = document.getElementsByTagName("p");
+
+        const sonucAlani = document.getElementById("sonuc-goster");
+
+        if (tumParagraflar.length > 0 && sonucAlani) {
+            
+            sonucAlani.innerHTML = tumParagraflar[0].innerHTML;
+        } else {
+           
+            console.warn("Sayfada paragraf elementi veya sonuç alanı bulunamadı.");
+        }
+    </script>
+
+</body>
+</html>

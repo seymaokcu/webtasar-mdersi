@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery ile Etiket Adına Göre Element Bulma Örneği</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h2>jQuery ile Etiket Adına Göre HTML Elementi Bulma</h2>
+
+    <p>Bu, listenin **birinci** paragrafıdır.</p>
+    <p>Bu, listenin ikinci paragrafıdır.</p>
+    <p>Bu, listenin üçüncü paragrafıdır.</p>
+
+    <hr>
+
+    <p>
+        <strong style="color: darkgreen;">Bulunan İlk Paragrafın İçeriği:</strong>
+        <span id="sonuc-goster"></span>
+    </p>
+
+    <script>
+        $(document).ready(function() {
+
+            const allParagraphs = $("p");
+
+            const firstParagraphText = allParagraphs.eq(0).text();
+
+            $("#sonuc-goster").text(firstParagraphText);
+
+        });
+    </script>
+
+</body>
+</html>

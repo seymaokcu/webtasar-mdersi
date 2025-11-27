@@ -1,4 +1,4 @@
-/* Genel Ayarlar */
+
 *{
     margin: 0;
     padding: 0;
@@ -10,23 +10,20 @@ body{
     overflow: hidden;
 }
 
-/* Ana Konteyner */
 .container{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 1000px; /* Kaydırıcının genişliği */
-    height: 600px; /* Kaydırıcının yüksekliği */
+    width: 1000px; 
+    height: 600px;
     background-color: #555;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-
-/* Kartların Ortak Stilleri */
 .container .slide .item{
-    width: 200px; /* Küçük kartların genişliği */
-    height: 300px; /* Küçük kartların yüksekliği */
+    width: 200px;
+    height: 300px; 
     position: absolute;
     top: 50%;
     border-radius: 20px;
@@ -34,10 +31,8 @@ body{
     background-position: 50% 50%;
     background-size: cover;
     display: inline-block;
-    transition: .4s; /* Kart geçiş animasyonu */
+    transition: .4s;
 }
-
-/* Büyük Kart (Slider'ın odağındaki kartlar) */
 .slide .item:nth-child(1),
 .slide .item:nth-child(2){
     top: 0;
@@ -47,34 +42,22 @@ body{
     width: 100%;
     height: 100%;
 }
-
-/* Küçük Önizleme Kartları Konumlandırması (Düzeltilen Kısım) */
-/* Kart 3: İlk küçük kart */
 .slide .item:nth-child(3){
     left: 70%; 
 }
 
-/* Kart 4: İkinci küçük kart */
 .slide .item:nth-child(4){
-    /* 70% + Kart Genişliği (200px) + Aralık (50px) = 950px civarı. Bu, 1000px konteynere sığması için ayarlanmalı. */
     left: calc(70% + 10px); 
 }
 
-/* Kart 5: Üçüncü küçük kart */
+
 .slide .item:nth-child(5){
-    /* İkinci kartın pozisyonu + Kart Genişliği + Aralık */
     left: calc(70% + 220px); 
 }
 
-/* Kart 6: Dördüncü küçük kart */
 .slide .item:nth-child(6){
-    /* Üçüncü kartın pozisyonu + Kart Genişliği + Aralık */
     left: calc(70% + 430px);
-    /* Ekrandan taşanlar, kaydırma mekaniği ile görünür hale gelir. */
 }
-
-
-/* İçerik Stilleri (Değişiklik Yok) */
 .item .content{
     position: absolute;
     top: 50%;
@@ -87,13 +70,9 @@ body{
     display: none;
 }
 
-/* Yalnızca İkinci Kartın İçeriğini Göster (Odağa gelen) */
 .slide .item:nth-child(2) .content{
     display: block;
 }
-
-
-/* ... (Kalan içerik animasyonları ve buton stilleri aynı kalır) ... */
 
 .content .name{
     font-size: 40px;

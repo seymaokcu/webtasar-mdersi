@@ -5,13 +5,12 @@
 }
 
 body {
-  background-color: #e8eaf6; /* Açık morumsu arka plan */
+  background-color: #e8eaf6;
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 20px;
 }
 
-/* --- Header ve Butonlar --- */
 .header {
     width: 100%;
     display: flex;
@@ -23,7 +22,7 @@ body {
 }
 
 .app-title {
-    color: #3f51b5; /* Koyu Mavi */
+    color: #3f51b5;
     font-weight: 700;
     margin: 0;
     font-size: 1.8rem;
@@ -51,7 +50,7 @@ body {
 }
 
 .yeniNot {
-  background-color: #4caf50; /* Yeşil */
+  background-color: #4caf50;
   border-radius: 5px;
   border: none;
   color: white;
@@ -65,7 +64,6 @@ body {
     background-color: #388e3c;
 }
 
-/* --- Not Konteyneri --- */
 #notes-container {
     display: flex;
     flex-wrap: wrap;
@@ -73,9 +71,8 @@ body {
 }
 
 .not {
-    /* Genel not görünümü */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    width: 350px; /* Daha standart bir not genişliği */
+    width: 350px; 
     min-height: 400px;
     display: flex;
     flex-direction: column;
@@ -83,20 +80,19 @@ body {
     overflow: hidden;
 }
 
-/* --- Araçlar ve Başlık Alanı --- */
 .araclar {
-    background-color: rgba(0, 0, 0, 0.1); /* Not renginin üzerinde hafif koyu */
+    background-color: rgba(0, 0, 0, 0.1); 
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px;
-    flex-shrink: 0; /* Küçülmesini engelle */
+    flex-shrink: 0; 
 }
 
 .araclar button {
     background-color: transparent;
     border: none;
-    color: #333; /* Daha görünür simge rengi */
+    color: #333; 
     cursor: pointer;
     font-size: 1rem;
     margin-left: 5px;
@@ -108,7 +104,7 @@ body {
 }
 
 .araclar .sil:hover {
-    color: #d32f2f; /* Sil butonu için kırmızı */
+    color: #d32f2f; 
 }
 
 .not-baslik {
@@ -122,10 +118,9 @@ body {
     color: #333;
 }
 .not-baslik[disabled] {
-    opacity: 1; /* Disabled olsa bile rengi solmasın */
+    opacity: 1; 
 }
 
-/* Renk Seçici */
 .renk-secici {
     padding: 5px;
     margin-right: 10px;
@@ -135,12 +130,9 @@ body {
     cursor: pointer;
 }
 
-
-/* --- İçerik Alanı --- */
-
 .notSayfa,
 textarea {
-    flex-grow: 1; /* Kalan alanı kapla */
+    flex-grow: 1; 
     width: 100%;
     padding: 15px;
     font-size: 1rem;
@@ -151,12 +143,12 @@ textarea {
 }
 
 .notSayfa {
-    background-color: transparent; /* Renk ana container'dan gelecek */
+    background-color: transparent; 
 }
 
 textarea {
     resize: none;
-    background-color: transparent; /* Renk ana container'dan gelecek */
+    background-color: transparent; 
     font-family: inherit;
 }
 
@@ -164,7 +156,6 @@ textarea {
     display: none !important;
 }
 
-/* Tarih Bilgisi */
 .tarih-bilgisi {
     font-size: 0.75rem;
     color: #666;
@@ -173,7 +164,6 @@ textarea {
     text-align: right;
 }
 
-/* Markdown Stil Düzeltmeleri */
 .notSayfa h1,
 .notSayfa h2,
 .notSayfa h3 {
@@ -185,8 +175,6 @@ textarea {
     margin: 5px 0;
 }
 
-
-/* --- Duyarlılık (Responsive) --- */
 @media (max-width: 800px) {
     .header {
         flex-direction: column;

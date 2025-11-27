@@ -43,14 +43,13 @@ nav ul li a {
   font-weight: 600;
   font-size: 18px;
   transition: 0.4s all ease-in-out;
-  padding: 5px 10px; /* Aktif linke uyum için görünmez padding eklendi */
+  padding: 5px 10px; 
 }
 
 nav ul li a.active {
   background-color: #00b90f;
   border-radius: 20px;
   color: #000;
-  /* Active link'in paddingi korundu */
 }
 
 .btn {
@@ -108,15 +107,12 @@ nav ul li a.active {
   animation-delay: 1.2s;
 }
 
-/* Düzeltme: Animasyonu tetikleme kuralı eklendi */
 .anim {
   opacity: 0;
   transform: translateY(30px);
-  /* Animasyon süresini ve adını buraya atıyoruz */
   animation: anim 1s ease forwards;
 }
 
-/* Düzeltme: Hatalı animation: ... kuralı kaldırıldı */
 @keyframes anim {
   100% {
     opacity: 1;

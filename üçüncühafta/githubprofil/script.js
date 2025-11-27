@@ -3,13 +3,10 @@ const sayfa = document.getElementById("sayfa");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
-// --- API Fonksiyonları ---
-
 async function profilBilgisiAl(profil) {
     try {
         const response = await fetch(githubApi + profil);
         
-        // Hata kontrolü (Örn: 404 Not Found)
         if (!response.ok) {
             hataGoster(`"${profil}" adlı kullanıcı bulunamadı.`);
             return;
@@ -33,10 +30,8 @@ async function reposGetir(profil) {
     reposBilgileriEkle(responseData);
 }
 
-// --- Görünüm Fonksiyonları ---
 
 function profilGoruntule(profil) {
-    // Bio alanı null veya boş ise yer tutucu metin kullan
     const bio = profil.bio ? profil.bio : "Kullanıcı kendini tanıtmayı unutmuş...";
 
     const cardHTML = `
@@ -65,7 +60,6 @@ function profilGoruntule(profil) {
 function reposBilgileriEkle(repos) {
     const reposEl = document.getElementById("repos");
     
-    // Repoları en çok yıldız alanlara göre sırala ve ilk 10'u göster
     repos
         .sort((a, b) => b.stargazers_count - a.stargazers_count)
         .slice(0, 10)
@@ -80,7 +74,6 @@ function reposBilgileriEkle(repos) {
             reposEl.appendChild(repoEl);
         });
         
-    // Eğer hiç repo yoksa bir mesaj gösterilebilir
     if (repos.length === 0) {
          reposEl.innerHTML = '<span style="color: #4a4a4a; font-style: italic;">Henüz genel reposu yok.</span>';
     }
@@ -91,17 +84,15 @@ function hataGoster(mesaj) {
     sayfa.innerHTML = errorHTML;
 }
 
-// --- Olay Dinleyicisi ---
-
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     
-    const profil = search.value.trim(); // Boşlukları temizle
+    const profil = search.value.trim(); 
     
     if (profil) {
         profilBilgisiAl(profil);
-        search.value = ""; // Arama çubuğunu temizle
+        search.value = ""; 
     } else {
-        sayfa.innerHTML = ''; // Arama boşsa kartı temizle
+        sayfa.innerHTML = ''; 
     }
 });

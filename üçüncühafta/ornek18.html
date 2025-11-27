@@ -4,34 +4,30 @@
         <meta charset="UTF-8">
         <title>Psuedo-class Örneği</title>
         <style>
-            /*link durumları*/
             a:link{
-                color: blue;  /*ziyaret edilmemiş link*/
+                color: blue;  
                 text-decoration: none;
             }
             a:visited{
-                color: purple; /*ziyaret edilmiş link*/
+                color: purple; 
             }
             a:hover{
-                color: red;  /*üzerine gelince*/
+                color: red;  
                 text-decoration: underline;
             }
             a:active{
-                color: green; /*tıklanınca*/
+                color: green; 
             }
 
-            /*ilk paragrafın özel rengi*/
             p:first-child{
                 color: darkorange;
                 font-weight: bold;
             }
 
-            /*paragraf içindeki ilk <i> etiketi*/
             p > i:first-child{
                 color: blue;
             }
 
-            /*dil bazlı stiller*/
             q:lang(en) {
                 quotes: "“" "”";
                 color: darkgreen;

@@ -9,11 +9,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Sayfayı yukarıya hizala */
+    justify-content: flex-start; 
     font-family: "Poppins", sans-serif;
     margin: 0;
     min-height: 100vh;
-    padding-top: 50px; /* Arama kutusu için üstten boşluk */
+    padding-top: 50px; 
 }
 
 label {
@@ -34,37 +34,34 @@ input {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 input::placeholder {
-    color: #8c7f73; /* Placeholder rengini arka plana uygun hale getirme */
+    color: #8c7f73;
 }
 input:focus {
-    outline: 2px solid #252323; /* Odaklandığında belirginleştirme */
+    outline: 2px solid #252323; 
 }
 
-/* Profil Kartı */
 .card {
     background-color: #F5F1ED;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4); /* Daha belirgin gölge */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4); 
     border-radius: 20px;
     display: flex;
     padding: 3rem;
     max-width: 800px;
-    width: 90%; /* Küçük ekranlarda sığması için */
+    width: 90%; 
     transition: all 0.5s ease;
 }
 
-/* Avatar Resmi */
 .avatar {
-    border: 5px solid #252323; /* Daha ince çerçeve */
-    border-radius: 50%; /* Yüzde yerine 50% kullanmak daha yaygındır */
+    border: 5px solid #252323; 
+    border-radius: 50%; 
     height: 200px;
     width: 200px;
 }
 
-/* Profil Bilgi Bölümü */
 .profil-bilgi {
     color: black;
     margin-left: 2rem;
-    font-size: 1.1rem; /* Daha okunaklı olması için küçültüldü */
+    font-size: 1.1rem;
 }
 
 .profil-bilgi h2 {
@@ -72,20 +69,19 @@ input:focus {
     font-size: 2.2rem;
 }
 
-/* Takipçi/Repo Bilgisi Listesi */
 .profil-bilgi ul {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
     padding: 0;
-    max-width: 450px; /* Genişletildi */
+    max-width: 450px; 
     margin-top: 20px;
     margin-bottom: 30px;
 }
 
 .profil-bilgi ul li {
     display: flex;
-    flex-direction: column; /* Sayıları alt alta getirdik */
+    flex-direction: column;
     align-items: center;
     padding: 0 15px;
     font-size: 0.9rem;
@@ -93,16 +89,15 @@ input:focus {
 }
 
 .profil-bilgi ul li strong {
-    font-size: 1.8rem; /* Sayıları büyüttük */
+    font-size: 1.8rem; 
     margin: 0;
 }
 
-/* Repolar */
 #repos {
     margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px; /* Repolar arasında boşluk */
+    gap: 8px;
 }
 
 .repo {
@@ -120,8 +115,6 @@ input:focus {
     background-color: #8c7f73;
     color: white;
 }
-
-/* Hata ve Boş Durum Mesajı Stilleri */
 .hata-mesaji {
     color: #252323;
     font-size: 1.8rem;
@@ -132,7 +125,6 @@ input:focus {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Mobil uyumluluk */
 @media (max-width: 600px) {
     .card {
         flex-direction: column;

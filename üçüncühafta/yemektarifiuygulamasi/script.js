@@ -1,4 +1,4 @@
-// --- DOM Elementleri ---
+
 const yemekler = document.getElementById("meals");
 const favoriteContainer = document.getElementById("fav-meals");
 const mealPopup = document.getElementById("meal-popup");
@@ -7,11 +7,9 @@ const popupCloseBtn = document.getElementById("close-popup");
 const searchTerm = document.getElementById("search-term");
 const searchBtn = document.getElementById("search");
 
-// --- Başlangıç Yüklemeleri ---
+
 rastgeleYemekGetir();
 fetchFavYemekler();
-
-// --- API İşlevleri ---
 
 async function rastgeleYemekGetir() {
     const sonuc = await fetch(
@@ -45,17 +43,13 @@ async function arananYemek(gelen) {
     return yemekler;
 }
 
-// --- DOM Ekleme İşlevleri ---
-
 function yemekEkle(yemekBilgi, random = false) {
     const yemek = document.createElement("div");
     yemek.classList.add("meal");
 
-    // Favorilerde olup olmadığını kontrol et
     const mealIds = LocalYemekGetir();
     const isFav = mealIds.includes(yemekBilgi.idMeal);
     
-    // Yemek kartı yapısı Türkçe'ye çevrildi
     yemek.innerHTML = `
         <div class="meal-header">
             ${
@@ -79,7 +73,7 @@ function yemekEkle(yemekBilgi, random = false) {
     const btn = yemek.querySelector(".meal-body .fav-btn");
 
     btn.addEventListener("click", (e) => {
-        e.stopPropagation(); // Pop-up açılmasını engelle
+        e.stopPropagation(); 
         if (btn.classList.contains("active")) {
             LocalYemekSil(yemekBilgi.idMeal);
             btn.classList.remove("active");
@@ -98,7 +92,7 @@ function yemekEkle(yemekBilgi, random = false) {
 }
 
 async function fetchFavYemekler() {
-    favoriteContainer.innerHTML = ""; // Favoriler listesini temizle
+    favoriteContainer.innerHTML = ""; 
 
     const mealIds = LocalYemekGetir();
 
@@ -111,7 +105,7 @@ async function fetchFavYemekler() {
         const mealId = mealIds[i];
         const yemek = await yemekIdGetir(mealId);
 
-        if (yemek) { // Hata durumuna karşı kontrol
+        if (yemek) {
              FavYemekEkle(yemek);
         }
     }
@@ -120,7 +114,6 @@ async function fetchFavYemekler() {
 function FavYemekEkle(mealData) {
     const favYemek = document.createElement("li");
 
-    // Fav yemek yapısı Türkçe'ye çevrildi
     favYemek.innerHTML = `
         <img
             src="${mealData.strMealThumb}"
@@ -133,10 +126,8 @@ function FavYemekEkle(mealData) {
     const btn = favYemek.querySelector(".clear");
 
     btn.addEventListener("click", (e) => {
-        e.stopPropagation(); // Üst elemanın click olayını engelle (pop-up açılmasını)
+        e.stopPropagation(); 
         LocalYemekSil(mealData.idMeal);
-        
-        // Ana yemek listesindeki kalp ikonunu güncelle
         const favBtnInMain = yemekler.querySelector(`.meal-body button.active[data-meal-id="${mealData.idMeal}"]`);
         if(favBtnInMain) {
             favBtnInMain.classList.remove('active');
@@ -151,9 +142,6 @@ function FavYemekEkle(mealData) {
 
     favoriteContainer.appendChild(favYemek);
 }
-
-// --- Detay Pop-up İşlevi ---
-
 function YemekBilgileriniGoster(yemekBilgi) {
     mealInfoEl.innerHTML = "";
 
@@ -161,7 +149,6 @@ function YemekBilgileriniGoster(yemekBilgi) {
 
     const ingredients = [];
 
-    // Malzemeleri al
     for (let i = 1; i <= 20; i++) {
         if (yemekBilgi["strIngredient" + i]) {
             ingredients.push(
@@ -173,8 +160,6 @@ function YemekBilgileriniGoster(yemekBilgi) {
             break;
         }
     }
-
-    // Yemek bilgileri pop-up içeriği (Türkçe)
     mealEl.innerHTML = `
         <h1>${yemekBilgi.strMeal}</h1>
         
@@ -210,8 +195,6 @@ function YemekBilgileriniGoster(yemekBilgi) {
     mealPopup.classList.remove("hidden");
 }
 
-// --- LocalStorage İşlevleri ---
-
 function LocalFavYemek(mealId) {
     const mealIds = LocalYemekGetir();
     localStorage.setItem("mealIds", JSON.stringify([...mealIds, mealId]));
@@ -232,12 +215,8 @@ function LocalYemekGetir() {
     return mealIds === null ? [] : mealIds;
 }
 
-
-// --- Olay Dinleyicileri ---
-
-/* Arama butonuna tıklandığında */
 searchBtn.addEventListener("click", async () => {
-    yemekler.innerHTML = ""; // Önceki yemekleri temizle
+    yemekler.innerHTML = ""; 
 
     const search = searchTerm.value.trim();
     if (!search) {
@@ -259,20 +238,15 @@ searchBtn.addEventListener("click", async () => {
 popupCloseBtn.addEventListener("click", () => {
     alert("Kapatma butonu çalışıyor!");
     
-    // Pop-up'ı gizle
     mealPopup.classList.add("hidden");
 });
 
-// Pop-up dışına tıklayınca kapatma
 mealPopup.addEventListener('click', (e) => {
     if(e.target.id === 'meal-popup') {
         mealPopup.classList.add('hidden');
     }
 });
-// script.js dosyanızın en alt kısmı (veya hemen olay dinleyicilerinden önce)
 
 console.log("mealPopup elementi:", document.getElementById("meal-popup"));
 console.log("popupCloseBtn elementi:", document.getElementById("close-popup"));
 
-// Eğer bu çıktıların herhangi birinde 'null' görüyorsanız, ID adını yanlış yazmışsınız demektir.
-// Bu kontrolü yaptıktan sonra, tarayıcınızın Console sekmesini kontrol edin.

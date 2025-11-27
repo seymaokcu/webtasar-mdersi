@@ -8,14 +8,14 @@ h1 {
     text-align: center;
     font-size: 50px;
     letter-spacing: 10px;
-    margin-top: 50px; /* Başlık ve sayaç arasına boşluk */
+    margin-top: 50px; 
 }
 h3 {
     color: #fff;
     text-align: center;
     font-size: 20px;
     letter-spacing: 10px;
-    margin-top: 50px; /* Alttaki başlık için boşluk */
+    margin-top: 50px; 
 }
 
 #main {
@@ -33,24 +33,23 @@ h3 {
     width: 20%;
     border-radius: 20px;
     box-sizing: border-box;
-    /* Animasyon için başlangıç ayarı */
     transform-origin: center center; 
 }
 
 #clock span:nth-child(1) {
-    background: #fa5559; /* Kırmızımsı */
+    background: #fa5559; 
 }
 
 #clock span:nth-child(2) {
-    background: #26c2b9; /* Turkuaz */
+    background: #26c2b9; 
 }
 
 #clock span:nth-child(3) {
-    background: #f6bc58; /* Sarımsı */
+    background: #f6bc58; 
 }
 
 #clock span:nth-child(4) {
-    background: #2dcb74; /* Yeşil */
+    background: #2dcb74; 
 }
 
 #clock::after {
@@ -74,10 +73,8 @@ h3 {
 }
 
 span.flip {
-    animation: flip 0.7s ease-out forwards; /* Animasyon süresini 0.7s yaptık */
+    animation: flip 0.7s ease-out forwards; 
 }
-
-/* 3D çevirme efekti eklendi */
 @keyframes flip {
     0% {
         transform: perspective(400px) rotateX(0deg);

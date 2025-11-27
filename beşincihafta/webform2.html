@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form Doğrulama Örneği</title>
+
+    <style type="text/css">
+        .inpBox {
+            background-color: #FFFFFF;
+            border: solid 1px #666666;
+        }
+
+        .inpBoxError {
+            border: solid 2px #FF0000; 
+        }
+    </style>
+</head>
+<body>
+
+    <script type="text/javascript">
+        function verify() {
+            var user = document.getElementById("user");
+            var pass = document.getElementById("pass");
+            var msg = "";
+
+            if (user.value == "") {
+                msg += "Please enter a username ! \n";
+                user.className = "inpBoxError"; 
+            } else {
+                user.className = "inpBox"; 
+            }
+
+            if (pass.value == "") {
+                msg += "Please enter a password ! \n";
+                pass.className = "inpBoxError";
+            } else {
+                pass.className = "inpBox";
+            }
+
+            if (msg == "") {
+                return true;
+            } else {
+                alert(msg);
+                return false;
+            }
+        }
+    </script>
+
+    <form action="index.htm" method="post" onSubmit="return verify();">
+        <table border="0">
+            <tr>
+                <td colspan="2" align="center"><b>Form Name</b></td>
+            </tr>
+            <tr>
+                <td>User</td>
+                <td>
+                    <input type="text" name="user" id="user" class="inpBox" />
+                </td>
+            </tr>
+            <tr>
+                <td>Pass</td>
+                <td>
+                    <input type="password" name="pass" id="pass" class="inpBox" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="submit" value="Submit Query" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

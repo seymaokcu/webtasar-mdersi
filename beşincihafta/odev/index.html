@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hepsiburada Benzeri Arayüz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <header id="top-bar">
+        <div class="container">
+            <div class="logo">Hepsi Burada</div>
+            <div class="search-box">
+                <input type="text" placeholder="Ürün, kategori veya marka ara">
+                <button>Ara</button>
+            </div>
+            <nav class="user-nav">
+                <a href="#">Giriş Yap</a>
+                <a href="#">Sepetim</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="main-content" class="container">
+        
+        <aside id="category-menu">
+            <h3>Tüm Kategoriler</h3>
+            <ul>
+                <li class="has-submenu"><a href="#">Teknoloji <span class="arrow">></span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Bilgisayar</a></li>
+                        <li><a href="#">Telefon</a></li>
+                        <li><a href="#">Beyaz Eşya</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu"><a href="#">Ev & Yaşam <span class="arrow">></span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Mobilya</a></li>
+                        <li><a href="#">Mutfak</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Moda</a></li>
+                <li><a href="#">Spor</a></li>
+                </ul>
+        </aside>
+
+        <main id="main-area">
+            <div id="hero-slider">
+                <img id="slider-img" src="img/slider1.jpg" alt="Slider Resmi">
+                <div class="slider-nav">
+                    <span class="dot active" data-img="img/slider1.jpg"></span>
+                    <span class="dot" data-img="img/slider2.jpg"></span>
+                    <span class="dot" data-img="img/slider3.jpg"></span>
+                </div>
+            </div>
+
+            <section id="product-list">
+                <h2>Öne Çıkan Ürünler</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/urun1.jpg" alt="Ürün 1">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Akıllı Saat Pro X</p>
+                            <p class="product-price">1.999 TL</p>
+                            <button class="add-to-cart">Sepete Ekle</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/urun2.jpg" alt="Ürün 2">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-name">Kablosuz Kulaklık</p>
+                            <p class="product-price">499 TL</p>
+                            <button class="add-to-cart">Sepete Ekle</button>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

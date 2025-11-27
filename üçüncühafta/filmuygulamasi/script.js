@@ -14,32 +14,32 @@ const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const currentPageEl = document.getElementById("current-page");
 
-// Sayfalama Yönetimi
+
 let currentPage = 1;
 let totalPages = 1;
 let lastSearchQuery = null; 
 
-// İlk Yüklemede Popüler Filmleri Getir
+
 filmler(APIURL + currentPage);
 
-// Film Bilgilerini API'den Çekme
+
 async function filmler(url) {
-    loadingEl.classList.remove('hidden'); // Yükleniyor mesajını göster
+    loadingEl.classList.remove('hidden');
     main.innerHTML = ""; 
-    window.scrollTo(0, 0); // Sayfanın en üstüne kaydır
+    window.scrollTo(0, 0);
 
     try {
         const response = await fetch(url);
         const responseData = await response.json();
         
-        loadingEl.classList.add('hidden'); // Yükleniyor mesajını gizle
+        loadingEl.classList.add('hidden'); 
 
         if (responseData.results.length === 0) {
             main.innerHTML = `<p class="no-results">Aradığınız kritere uygun film bulunamadı.</p>`;
         } else {
             filmleriGoster(responseData.results);
             
-            // Sayfalama bilgilerini güncelle
+            
             currentPage = responseData.page;
             totalPages = responseData.total_pages > 500 ? 500 : responseData.total_pages; 
             sayfalamaGuncelle();
@@ -51,14 +51,14 @@ async function filmler(url) {
     }
 }
 
-// Film Kartlarını Ekrana Basma
+
 function filmleriGoster(film) {
     main.innerHTML = "";
 
     film.forEach((item) => {
         const { poster_path, title, vote_average, overview, id } = item;
         
-        // Poster yoksa, yerine yer tutucu kullan
+        
         const posterSrc = poster_path 
             ? (IMGPATH + poster_path) 
             : 'https://via.placeholder.com/300x450?text=POSTER+BULUNAMADI'; 
@@ -66,7 +66,7 @@ function filmleriGoster(film) {
         const filmElement = document.createElement("div");
         filmElement.classList.add("movie");
 
-        // Kartın tamamını TMDb sayfasına yönlendir
+        
         filmElement.onclick = () => {
             window.open(MOVIELINK + id, '_blank');
         };
@@ -93,7 +93,7 @@ function filmleriGoster(film) {
     });
 }
 
-// Film Oranına Göre Renk Belirleme
+
 function filmOranı(oran) {
     if (oran >= 7.5) {
         return "green";
@@ -104,19 +104,19 @@ function filmOranı(oran) {
     }
 }
 
-// === Sayfalama (Pagination) Fonksiyonları ===
+
 
 function sayfalamaGuncelle() {
     currentPageEl.innerText = currentPage;
 
-    // Önceki Butonu Kontrolü
+    
     if (currentPage <= 1) {
         prevBtn.classList.add('disabled');
     } else {
         prevBtn.classList.remove('disabled');
     }
 
-    // Sonraki Butonu Kontrolü
+    
     if (currentPage >= totalPages) {
         nextBtn.classList.add('disabled');
     } else {
@@ -124,7 +124,7 @@ function sayfalamaGuncelle() {
     }
 }
 
-// Önceki Sayfaya Git
+
 prevBtn.addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
@@ -132,7 +132,7 @@ prevBtn.addEventListener('click', () => {
     }
 });
 
-// Sonraki Sayfaya Git
+
 nextBtn.addEventListener('click', () => {
     if (currentPage < totalPages) {
         currentPage++;
@@ -143,21 +143,21 @@ nextBtn.addEventListener('click', () => {
 function sayfaYukle(page) {
     let url;
     if (lastSearchQuery) {
-        // Arama yapılmışsa, arama sonuçlarının sonraki sayfasına git
+        
         url = SEARCHAPI + lastSearchQuery + `&page=${page}`;
     } else {
-        // Normal popüler filmlerin sonraki sayfasına git
+        
         url = APIURL + page;
     }
     filmler(url);
 }
 
-// Arama Formu Gönderimi
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const arananFilm = search.value.trim();
-    currentPage = 1; // Yeni aramada sayfayı 1'e sıfırla
+    currentPage = 1; 
 
     if (arananFilm) {
         lastSearchQuery = arananFilm;

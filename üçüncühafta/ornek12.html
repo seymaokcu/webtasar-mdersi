@@ -4,38 +4,32 @@
         <meta charset="UTF-8">
         <title>Tablo ve Box Model Örneği</title>
         <style>
-            /*tablo genişlik ve yükseklik*/
             table{
                 width: 100%;
-                border-collapse: collapse; /*çift çizgiyi engeller*/
+                border-collapse: collapse; 
             }
             th{
                 height: 50px;
                 background-color: green;
                 color: white;
             }
-            /*kenarlıklar*/
             table, th, td{
                 border: 1px solid green;
             }
-
-            /*hücre içi boşluk*/
             td, th{
                 padding: 15px;
             }
-            /*hizalama*/
             td{
-                text-align: right; /*yatay hizalama sağa*/
+                text-align: right; 
                 height: 50px;
-                vertical-align: bottom; /*dikey hizalama alta*/
+                vertical-align: bottom; 
             }
-            /*box model örneği*/
             .box{
                 width: 300px; 
-                margin: 20px; /*dış boşluk*/
-                border: 5px solid blue; /*kenarlık*/
-                padding: 15px; /*iç boşluk*/
-                background-color: lightyellow; /*iç alan*/
+                margin: 20px; 
+                border: 5px solid blue; 
+                padding: 15px; 
+                background-color: lightyellow; 
             }
         </style>
     </head>
